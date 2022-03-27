@@ -10,7 +10,7 @@ export const Dashboard = () => {
   return (
    
     <div className='Dashboard'>
-    
+      <p>hi abi</p>
       <div className='Sidebar'>
         <Sidebar />
       </div>
