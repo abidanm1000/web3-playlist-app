@@ -2,6 +2,8 @@ import React from 'react'
 
 export const FilterControl = () => {
   return (
-    <div>FilterControl</div>
+    <div className="filter-control">
+      <h6>Filter Control</h6>
+    </div>
   )
 }

@@ -1,9 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@300;400&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Dashboard CSS */
 .Dashboard {
   text-align: center;
+  /* border: 3px hotpink solid; */
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to top, #0D2237, #0E324A, #3B243E);
+  /* filter: blur(1.2px); */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-family: 'Lobster', cursive;
 }
+
+.Sidebar {
+  border-right: 1px rgb(150, 147, 147) solid;
+  height: 100vh;
+  width: 150px;
+  /* background-image: linear-gradient(to top, #0D2237, #0E324A, #3B243E); */
+}
+
+.Content {
+  height: 100vh;
+  width: 100%;
+  /* border: 3px rgb(105, 170, 255) solid; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 25px;
+}
+
+.Navbar {
+  height: 7%;
+  width: 100%;
+  border-bottom: 15px;
+  /* border:  3px rgb(123, 255, 105) solid; */
+}
+
+.Songlist {
+  /* border:  3px rgb(228, 228, 42) solid; */
+  height: 50%;
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  gap: 5px;
+}
+
+.song-header {
+  border-bottom:  1px rgb(150, 147, 147) solid;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px 5px 15px ;
+}
+
+.song-container {
+  /* border:  3px rgb(123, 255, 105) solid; */
+  overflow: scroll;
+}
+
+.song-container::-webkit-scrollbar {
+  display: none;
+}
+
+.Song {
+  /* border: 3px hotpink solid; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  padding: 5px 10px 5px 10px;
+  font-family: 'BioRhyme', serif;
+  font-size: 16px;
+  /* flex-direction: column; */
+}
+
+.song-info {
+  /* border:  3px rgb(123, 255, 105) solid; */
+ 
+
+}
+
+.artist {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.filter-control {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+/* Profile CSS */
