@@ -8,6 +8,7 @@ export const SongList = () => {
       <div className='song-header'>
         <div><h6>Song List</h6></div>
         <div>
+          We're Winning
           <FilterControl />
         </div>
       </div>
