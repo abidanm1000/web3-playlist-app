@@ -1,25 +1,26 @@
 import React from 'react'
+import { Sidebar } from './Sidebar'
+import { SongList } from './SongList'
 
 export const Profile = () => {
+  
   return (
-    <div className="profile">
+    <div className="Profile">
 
-      <Sidebar />
-
-      <img className="profile-img"></img>
-      <h6 className="profile-name">Metamask address</h6>
-
-      <div className="Songlist">
-      <div className='song-header'>
-        <div>Songlist</div>
-        <div>
-          <FilterControl />
-        </div>
+      <div className='Sidebar'>
+        <Sidebar />
       </div>
-    
-      <Song />
-    
-    </div>
+
+      <div className="profile-content">
+
+        <div className='profile-info'>
+          <img className="profile-img" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQctLok4OFZ62gLhEncinKUDIT-Y0mhOwhiaUqU64mJfKFMzHWg1tptNfJbZenKYPG4eY&usqp=CAU' alt="profile" />
+          <h1 className="profile-name">Metamask address</h1>
+        </div>
+
+        <SongList />
+
+      </div>
     </div>
   )
 }
