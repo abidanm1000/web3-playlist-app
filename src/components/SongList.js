@@ -6,7 +6,7 @@ export const SongList = () => {
   return (
     <div className="Songlist">
       <div className='song-header'>
-        <div><h6>Song List</h6></div>
+        <div><h1>Song List</h1></div>
         <div>
           <FilterControl />
         </div>

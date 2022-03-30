@@ -8,9 +8,7 @@ export const Song = () => {
         <p className='artist'>Song Artist</p>
       </div>
 
-      song
-
-      <p>2:30</p>
+      <p className='time'>2:30</p>
       <button>SELECT</button>
     </div>
   )
