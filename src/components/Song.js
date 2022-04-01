@@ -1,11 +1,12 @@
-import React from 'react'
+import React , { useState }  from 'react'
 
-export const Song = () => {
+
+export const Song = ( { name } ) => {
   return (
     <div className="Song">
       <div className='song-info'>
-        <p>Song Name</p>
-        <p className='artist'>Song Artist</p>
+        <p>{name.name}e</p>
+        <p className='artist'>{name.artist.name}</p>
       </div>
 
       song
