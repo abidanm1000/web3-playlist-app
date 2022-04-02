@@ -1,5 +1,7 @@
 import React from 'react'
 import { CartItem } from './CartItem'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import MetaLogo from '../images/metamask-logo.png'
 
 
 export const Cart = () => {
@@ -9,10 +11,10 @@ export const Cart = () => {
             <div className='cart-header'>
                 <div className='cart-title'>
                     <div className='return-button'>Back</div>
-                    <div className='cart-info'>Cart $0</div>
+                    <div className='cart-info'>Cart <FontAwesomeIcon id='cart-eth-icon' icon="fa-brands fa-ethereum" /> 0</div>
                 </div>
                 <div className='cart-options'>
-                    <div className='cart-purchase'>Confirm Purchase (logo)</div>
+                    <div className='cart-purchase'>Confirm Purchase <img id='meta-logo' src={MetaLogo} alt="" /></div>
                 </div>
             </div>
             
