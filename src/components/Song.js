@@ -1,12 +1,12 @@
 import React , { useState }  from 'react'
 
 
-export const Song = ( { name } ) => {
+export const Song = ({artist} ) => {
   return (
     <div className="Song">
       <div className='song-info'>
-        <p>{name.name}e</p>
-        <p className='artist'>{name.artist.name}</p>
+        {/* <p>{trackName.data.mvids[0].strTrack}</p> */}
+        <p className='artist'>{artist}</p>
       </div>
 
       song

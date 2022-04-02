@@ -1,11 +1,17 @@
-import React, {userState} from 'react'
-import {Song} from '../components/Song'
+import React, {useState} from 'react'
+// import {Song} from '../components/Song'
 import {FilterControl} from '../components/FilterControl'
 
 
-export const SongList = ({tracks}) => {
+export const SongList = ({songs}) => {
 
-  // console.log(tracks)
+  // console.log(songs)
+  
+
+  // console.log(songList)
+  songs.forEach(track => console.log(track))
+
+
   return (
     <div className="Songlist">
       <div className='song-header'>
@@ -13,17 +19,14 @@ export const SongList = ({tracks}) => {
         <div>
         
           <FilterControl />
+         
+        
         </div>
       </div>
       <div className="song-container">
+          
         <div className='song-list'>
-       { tracks.map((track)=>{
-         console.log(track)
-          return <Song name ={tracks.track.name} />
-       })  }
-       
-        
-        
+
         </div>
       </div>
     </div>
