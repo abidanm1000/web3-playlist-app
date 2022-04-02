@@ -6,11 +6,10 @@ import { Dashboard } from './pages/Dashboard'
 import { SignUp } from './pages/SignUp';
 import { SignIn } from './pages/SignIn';
 import { Profile } from './pages/Profile'
-
-// font awesome imports
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faFire } from '@fortawesome/free-solid-svg-icons'
+
 
 function App() {
   // icon library - able to use icons in any component
