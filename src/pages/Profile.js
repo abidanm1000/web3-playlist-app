@@ -1,6 +1,6 @@
 import React from 'react'
-import { Sidebar } from './Sidebar'
-import { SongList } from './SongList'
+import { Sidebar } from '../components/Sidebar'
+import { SongList } from '../components/SongList'
 
 export const Profile = () => {
   

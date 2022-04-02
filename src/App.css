@@ -64,7 +64,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0px 5px 0px ;
+  padding: 5px 15px 5px 15px ;
   height: 120px;
   /* padding: 20px; */
   /* border: #3B243E 1px solid; */
@@ -85,11 +85,21 @@
   justify-content: space-between;
   align-items: center;
   display: flex;
-  padding: 5px 0px 5px 0px;
+  padding: 5px 15px 5px 15px;
   font-family: 'BioRhyme', serif;
   font-size: 16px;
   height: 75px;
+  /* cursor: pointer; */
+  transition: all 250ms ease;
+  border-radius: 7px;
+  /* position: relative; */
   /* flex-direction: column; */
+}
+
+.Song:hover {
+  transform: translateY(-4px);
+  /* box-shadow: 0 0 7px 0 hsl(240, 25%, 2%); */
+  background-color: rgba(133, 131, 131, 0.274);
 }
 
 .song-info {
@@ -98,21 +108,45 @@
 }
 
 .artist {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
   color: rgb(175, 171, 171);
+}
+
+.time {
+  font-size: 16px;
+  color: rgb(175, 171, 171);
+}
+
+.price {
+  /* border: 3px hotpink solid; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
+  font-size: 16px;
+}
+
+.song-button {
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.song-button:hover {
+  background-color: #74397c;
+  /* background-image: linear-gradient(to top, #0E324A, #0D2237, #3B243E); */
+  color: white;
+  border: black 1px solid;
 }
 
 .filter-control {
   display: flex;
   justify-content: space-between;
-  
 }
 
-.time {
-  font-size: 12px;
-  color: rgb(175, 171, 171);
-}
 
 /* Profile CSS */
 
@@ -136,7 +170,8 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: 25px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .profile-info {
@@ -153,4 +188,3 @@
   border-radius: 50%;
   height: 200px;
 }
-
