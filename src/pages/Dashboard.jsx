@@ -2,6 +2,7 @@ import React from 'react'
 import { Sidebar } from '../components/Sidebar'
 import { Navbar }  from '../components/Navbar'
 import { SongList } from '../components/SongList'
+import { Cart } from '../components/Cart'
 
 
 export const Dashboard = () => {
@@ -10,7 +11,7 @@ export const Dashboard = () => {
   return (
    
     <div className='Dashboard'>
-      <p>hi abi</p>
+
       <div className='Sidebar'>
         <Sidebar />
       </div>
@@ -19,6 +20,10 @@ export const Dashboard = () => {
         <Navbar /> 
         
         <SongList />
+      </div>
+
+      <div className='Cart-Section'>
+        <Cart />
       </div>
     </div>
   ) 
