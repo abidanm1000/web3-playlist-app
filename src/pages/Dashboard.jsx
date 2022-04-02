@@ -2,6 +2,7 @@ import React from 'react'
 import { Sidebar } from '../components/Sidebar'
 import { Navbar }  from '../components/Navbar'
 import { SongList } from '../components/SongList'
+import { Cart } from '../components/Cart'
 
 export const Dashboard = () => {
   
@@ -19,6 +20,10 @@ export const Dashboard = () => {
       developement branch
         
         <SongList />
+      </div>
+
+      <div className='Cart-Section'>
+        <Cart />
       </div>
     </div>
   ) 
