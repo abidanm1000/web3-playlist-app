@@ -25,7 +25,9 @@
   display: flex;
   font-family: 'Lobster', cursive;
   color: white;
-  background:linear-gradient(to top, #0D2237, #0E324A, #3B243E);
+  background-image: linear-gradient(to top, #0E324A, #0D2237, #3B243E);
+
+  /* background:linear-gradient(to top, #0D2237, #0E324A, #3B243E); */
   /* text-shadow: 1px 0px 2px #8dc4f0; */
 }
 
@@ -198,14 +200,18 @@ flex-direction: column; */
 .login {
   width: 50%;
   /* background-color: thistle; */
-  margin-top: 30px;
+  /* margin-top: 30px; */
   display: flex;
 }
 
 .search input {
   width: 60%;
-  border-radius: 10px;
-  height: 20px;
+  border-radius: 30px;
+  height: 50px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  /* background-color: #0D2237; */
   /* display: flex;
   justify-content: space-between; */
 
