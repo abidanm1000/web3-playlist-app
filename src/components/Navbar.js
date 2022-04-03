@@ -1,6 +1,10 @@
+
 import React from 'react'
+import { ShoppingBasket} from "@material-ui/icons";
 
 export const Navbar = () => {
+
+
   return (
     <div className='Navbar'>
       
@@ -18,10 +22,9 @@ export const Navbar = () => {
       <div className="right">
       
         <div className="profilee">
-          <img src="/images/me.jpg" alt="" />
+         {< ShoppingBasket/> }
         </div>
         
-        <img src="/images/sun.svg" alt="" />
 
       </div>
     </div>

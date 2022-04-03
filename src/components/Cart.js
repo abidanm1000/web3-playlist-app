@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { CartItem } from './CartItem'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import MetaLogo from '../images/metamask-logo.png'
 
 
+
 export const Cart = () => {
+
+  
+    
   return (
     <div className='cart'>
         <div className='cart-list'>

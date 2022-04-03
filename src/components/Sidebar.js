@@ -19,7 +19,7 @@ import { useState } from "react";
 export const Sidebar = ({})=> {
   const [open, setOpen] = useState(true);
 
-  // for collpsing sidebar
+
   const handleToggle = () => {
     setOpen(!open);
   };
@@ -44,7 +44,7 @@ export const Sidebar = ({})=> {
       },
     },
   };
-// console.log(sidebarVariants)
+console.log(sidebarVariants)
   const profileVariants = {
     true: {
       alignSelf: "center",
@@ -55,6 +55,10 @@ export const Sidebar = ({})=> {
       marginTop: "2rem",
       width: "3rem",
     },
+  };
+
+  const handleCart = () => {
+    setOpen(!open);
   };
   return (
     <div className="Sidebar">
@@ -125,7 +129,8 @@ export const Sidebar = ({})=> {
               </motion.h3>
   
               <Item icon={<DashboardRounded />} name="Home" />
-              <Item icon={< ShoppingCart/>} name="Cart" />
+              <span onClick={handleCart}> 
+              <Item /><img src="/images/sun.svg" alt="" /></span>
             </div>
           </div>
           {/* group 2 */}
