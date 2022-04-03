@@ -40,13 +40,14 @@ export const SignUp = () => {
     <div>
       <Login 
         title='Sign Up'
-        button='Sign Up'
+        button='Create Account'
         href='/'
-        link='Sign In'
+        link='Log In'
         headerStatement='Already have an account?'
         emailInput={emailRef}
         passwordInput={passwordRef}
         btnFunction={register}
+        googleButton='Sign up'
       />
     </div>
   )

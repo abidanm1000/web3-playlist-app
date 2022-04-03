@@ -44,7 +44,7 @@ export const Sidebar = ({})=> {
       },
     },
   };
-console.log(sidebarVariants)
+// console.log(sidebarVariants)
   const profileVariants = {
     true: {
       alignSelf: "center",
@@ -59,7 +59,7 @@ console.log(sidebarVariants)
   return (
     <div className="Sidebar">
       <motion.div
-        data-Open={open}
+        // dataOpen={open}
         variants={sideContainerVariants}
         initial={`${open}`}
         animate={`${open}`}
@@ -81,6 +81,7 @@ console.log(sidebarVariants)
               backdropFilter: "blur(3.5px)",
               WebkitBackdropFilter: "blur(3.5px)",
               border: "1px solid rgba( 255, 255, 255, 0.18 )",
+              cursor: "pointer",
               transition: {
                 delay: 0.2,
                 duration: 0.4,

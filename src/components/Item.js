@@ -1,6 +1,6 @@
 
 import React from 'react'
-import './Item.css'
+import '../styles/Item.css'
 import {motion} from 'framer-motion'
 
 const Item = ({icon, name}) => {
@@ -19,8 +19,8 @@ const Item = ({icon, name}) => {
     <motion.div className='item'
     whileHover = {{
         backgroundColor: "rgba(255, 255, 255, 0.3)",
-        boxShadow: "0 800px 320px 0 rgba(31, 38, 135, 0.37)",
-        backdropFilter: "blur(5.5px)",
+        // boxShadow: "0 800px 320px 0 rgba(31, 38, 135, 0.37)",
+        // backdropFilter: "blur(5.5px)",
         WebkitBackdropFilter: "blur(5.5px)",
         border: "1px solid rgba( 255, 255, 255, 0.18 )",
         cursor: 'pointer',
