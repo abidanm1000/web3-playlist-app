@@ -19,10 +19,10 @@ import { useState } from "react";
 export const Sidebar = ({})=> {
   const [open, setOpen] = useState(true);
 
-  // for collpsing sidebar
-  // const handleToggle = () => {
-  //   setOpen(!open);
-  // };
+
+  const handleToggle = () => {
+    setOpen(!open);
+  };
 
   const sideContainerVariants = {
     true: {
@@ -38,20 +38,20 @@ export const Sidebar = ({})=> {
   const sidebarVariants = {
     true: {},
     false: {
-      width: "3rem",
+      width: "8rem",
       transition: {
         delay: 0.4,
       },
     },
   };
-console.log(sidebarVariants)
+// console.log(sidebarVariants)
   const profileVariants = {
     true: {
       alignSelf: "center",
       width: "4rem",
     },
     false: {
-      alignSelf: "flex-start",
+      alignSelf: "center",
       marginTop: "2rem",
       width: "3rem",
     },
@@ -63,7 +63,7 @@ console.log(sidebarVariants)
   return (
     <div className="Sidebar">
       <motion.div
-        data-Open={open}
+        // dataOpen={open}
         variants={sideContainerVariants}
         initial={`${open}`}
         animate={`${open}`}
@@ -85,12 +85,13 @@ console.log(sidebarVariants)
               backdropFilter: "blur(3.5px)",
               WebkitBackdropFilter: "blur(3.5px)",
               border: "1px solid rgba( 255, 255, 255, 0.18 )",
+              cursor: "pointer",
               transition: {
                 delay: 0.2,
                 duration: 0.4,
               },
             }}
-            // onClick={handleToggle}
+            onClick={handleToggle}
             className="lines_icon"
           >
             <TocRounded />
@@ -126,6 +127,7 @@ console.log(sidebarVariants)
               >
                 DASHBOARD
               </motion.h3>
+  
               <Item icon={<DashboardRounded />} name="Home" />
               <span onClick={handleCart}> 
               <Item  icon={< ShoppingCart/>} name="Cart"  /> </span>
