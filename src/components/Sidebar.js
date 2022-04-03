@@ -44,7 +44,7 @@ export const Sidebar = ({})=> {
       },
     },
   };
-// console.log(sidebarVariants)
+console.log(sidebarVariants)
   const profileVariants = {
     true: {
       alignSelf: "center",
@@ -130,7 +130,7 @@ export const Sidebar = ({})=> {
   
               <Item icon={<DashboardRounded />} name="Home" />
               <span onClick={handleCart}> 
-              <Item  icon={< ShoppingCart/>} name="Cart"  /> </span>
+              <Item /><img src="/images/sun.svg" alt="" /></span>
             </div>
           </div>
           {/* group 2 */}

@@ -7,11 +7,11 @@ import { Cart } from '../components/Cart'
 export const Dashboard = () => {
 
   const [songs, setSongs] = useState([])
-  
+  // theaudiodb.com/api/v1/json/523532/mostloved.php?format=track
   useEffect(()=>{
-    fetch(`https://theaudiodb.com/api/v1/json/523532/mvid.php?i=112024`)
+    fetch(`https://theaudiodb.com/api/v1/json/523532/mostloved.php?format=track`)
     .then(response => response.json())
-    .then(json => setSongs(json.mvids))
+    .then(json => setSongs(json.loved))
   }, [])
 
   console.log(songs)
