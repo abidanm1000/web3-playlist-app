@@ -9,12 +9,11 @@
 
 /* Dashboard CSS */
 .Dashboard {
-  text-align: center;
   /* border: 3px hotpink solid; */
+  text-align: center;
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(to top, #0E324A, #0D2237, #3B243E);
-  /* filter: blur(1.2px); */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,31 +21,182 @@
   font-family: 'Lobster', cursive;
 }
 
+
+
+
+/* Sidebar and Navbar CSS */
 .Sidebar {
-  border-right: 1px rgb(150, 147, 147) solid;
-  height: 100vh;
-  width: 150px;
-  /* background-image: linear-gradient(to top, #0D2237, #0E324A, #3B243E); */
+  display: flex;
+  font-family: 'Lobster', cursive;
+  color: white;
+  background-image: linear-gradient(to top, #0E324A, #0D2237, #3B243E);
 }
 
+.sidebar_container {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left:0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sidebar {
+  /* border: #c0300c 4px solid; */
+  background-color: rgba(83, 83, 83, 0.342);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  border-radius:10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 14rem;
+}
+
+.lines_icon{
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.profile{
+  border: white solid 2px;
+  display: flex;
+  /* text-align: center; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.profile>img{
+  width: 100%;
+  /* height: auto; */
+  border-radius: 50%;
+  /* margin: 0 auto; */
+}
+
+.groups{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  width: 100%
+}
+.group{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%
+}
+h3{
+  font-size: 1.3rem;
+  margin: 10px 0px 10px 0px
+}
+
+.group input{ 
+  overflow: hidden;
+}
+
+
+
 .Content {
+  /* border: 3px rgb(105, 170, 255) solid; */
   height: 100vh;
   width: 100%;
-  /* border: 3px rgb(105, 170, 255) solid; */
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
   padding-left: 100px;
   padding-right: 100px;
+  flex: 1;
 }
 
 .Navbar {
+  /* border:  3px rgb(123, 255, 105) solid; */
   height: 7%;
   width: 100%;
   border-bottom: 15px;
-  /* border:  3px rgb(123, 255, 105) solid; */
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
 }
+
+.Navbar div {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  height: 100%;
+  font-size: 1.5rem;
+  text-align: left;
+  flex-grow: 2;
+}
+
+.left div {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  /* width: 100%; */
+}
+
+.left p{
+  /* border:  3px rgb(123, 255, 105) solid; */
+  font-size: smaller;
+  font-weight: 1;
+  color: gray;
+}
+
+.right{
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.right img{
+  height: 35px;
+}
+
+.profilee img {
+  border-radius: 50%;
+}
+
+.right:hover, .left:hover {
+  cursor: pointer;
+}
+
+.search{
+  padding: 0 10px 0 10px;
+  justify-content: center;
+  flex-grow: 2;
+}
+.login {
+  width: 50%;
+  display: flex;
+}
+
+.search input {
+  width: 100%;
+  border-radius: 30px;
+  height: 60px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.575);
+  background-color: transparent;
+  color: white;
+}
+
+
+
+
+/* Song list CSS */
 
 .Songlist {
   /* border:  3px rgb(228, 228, 42) solid; */
@@ -64,7 +214,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0px 5px 0px ;
+  padding: 5px 15px 5px 15px ;
   height: 120px;
   /* padding: 20px; */
   /* border: #3B243E 1px solid; */
@@ -82,37 +232,317 @@
 .Song {
   /* border: 3px hotpink solid; */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  padding: 5px 0px 5px 0px;
-  font-family: 'BioRhyme', serif;
-  font-size: 16px;
+  justify-content: center;
+  /* align-items: stretch; */
+  padding: 5px 15px 5px 15px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'BioRhyme', serif; */
+  font-size: 20px;
   height: 75px;
+  font-weight: 600;
+  /* cursor: pointer; */
+  transition: all 250ms ease;
+  border-radius: 7px;
+  /* position: relative; */
   /* flex-direction: column; */
+}
+
+.Song:hover {
+  transform: translateY(-4px);
+  /* box-shadow: 0 0 7px 0 hsl(240, 25%, 2%); */
+  background-color: rgba(133, 131, 131, 0.274);
 }
 
 .song-info {
   /* border:  3px rgb(123, 255, 105) solid; */
   text-align: left;
-
+  flex-grow: 3;
+  flex-basis: 100px;
 }
 
 .artist {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
   color: rgb(175, 171, 171);
+}
+
+.time {
+  /* border:  3px rgb(123, 255, 105) solid; */
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: rgb(175, 171, 171);
+}
+
+.price {
+  /* border: 3px hotpink solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  font-size: 16px;
+  flex-grow: 1;
+
+}
+
+.song-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.song-button {
+  /* border:  3px rgb(123, 255, 105) solid; */
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.song-button:hover {
+  background-color: #883e92;
+  /* background-image: linear-gradient(to top, #0E324A, #0D2237, #3B243E); */
+  color: white;
+  border: black 1px solid;
 }
 
 .filter-control {
   display: flex;
   justify-content: space-between;
+}
+
+
+
+
+
+
+/* Profile CSS */
+
+.profile-content {
+  /* border: 3px hotpink solid; */
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to top, #2D7786, #9725E6, #B70E06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Lobster', cursive;
+}
+
+.profile-sidebar {
+  /* border: 1px solid blue; */
+  overflow: hidden;
+  background-image: linear-gradient(to top, #2D7786, #9725E6, #B70E06);
+}
+
+.profile-info {
+  /* border: 3px rgb(105, 255, 178) solid; */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+.profile-img {
+  border-radius: 50%;
+}
+
+.profile-name {
+  padding-top: 10px;
+}
+
+.profile-stats {
+  padding-top: 10px;
+}
+
+
+
+/* Cart CSS */
+.cart {
+  width: auto;
+  /* height: 100vh; */
+  /* border: #5daae9 5px solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: fixed;
+  top: 0;
+  right: 0; */
+  /* background-image: linear-gradient(to top, #19182aa9, #202136af, #4046569c); */
+  border-radius: 10px;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  background-color: rgba(83, 83, 83, 0.342);
+}
+
+.cart-list {
+
+  /* filter: blur(10px); */
+  /* z-index: 2; */
+  width: 500px;
+  height: 100vh;
+  /* border: #b026c2 3px solid; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+.cart-header {
+  /* border-bottom: #5daae9 2px solid; */
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.cart-title {
+  height: 100%;
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  /* border: #0142FF 1px solid; */
+}
+
+.return-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: black 2px solid; */
+  height: 100%;
+  font-size: 20px;
+  padding: 10px;
+  transition: all ease 300ms;
+  text-decoration: underline;
+}
+
+.return-button:hover {
+  background-color: #8b8b8b;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.cart-info {
+  /* border: white 1px solid; */
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#cart-eth-icon {
+  font-size: 30px;
+} 
+
+.cart-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  /* border: #7572a7 1px solid; */
+}
+
+
+.cart-purchase {
+  border: #19182A 2px solid;
+  height: 50px;
+  border-radius: 20px;
+  font-weight: 600;
+  background-color: #0162fe86;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  transition: all 300ms ease;
+}
+
+.cart-purchase:hover {
+  background-color: #0ddd30c4;
+  cursor: pointer;
+}
+
+#meta-logo {
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.cart-items {
+  /* border: #e9a15d 2px solid; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.cart-items::-webkit-scrollbar {
+  display: none;
+}
+
+.cart-item {
+  padding: 30px;
+  /* border: #33d801 2px solid; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 400ms ease;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
   
 }
 
-.time {
-  font-size: 12px;
-  color: rgb(175, 171, 171);
+.cart-item-description {
+  text-align: start;
 }
 
-/* Profile CSS */
+.cart-item:hover {
+  border-radius: 10px;
+  box-shadow: rgba(168, 167, 167, 0.493) 0px 4px 5px 2px;
+  transform: translateY(-4px);
+}
+
+.cart-song-name {
+  font-size: 20px;
+}
+
+.cart-song-artist {
+  font-size: 13px;
+  color: rgb(167, 166, 166);
+}
+
+.cart-remove-button {
+  padding: 8px;
+  border-radius: 10px;
+  border: 2px rgb(172, 171, 171) solid;
+  background-color: transparent;
+  color: rgb(172, 171, 171);
+  transition: all 300ms ease;
+  font-weight: 600;
+}
+
+.cart-remove-button:hover {
+  cursor: pointer;
+  background-color: #c0300c;
+  border: #c0300c 2px solid;
+  color: white;
+}

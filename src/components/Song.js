@@ -1,15 +1,26 @@
 import React from 'react'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
-export const Song = () => {
+
+export const Song = ({ songTrack, songArtist }) => {
+
   return (
-    <div className="Song">
+    <div className='Song'>
       <div className='song-info'>
-        <p>Song Name</p>
-        <p className='artist'>Song Artist</p>
+        <p>{songTrack}</p>
+        <p className='artist'>{songArtist}</p>
       </div>
 
       <p className='time'>2:30</p>
-      <button>SELECT</button>
+
+      <div className='price'>
+        <FontAwesomeIcon icon="fa-brands fa-ethereum" />
+        <p>0.05</p>
+      </div>
+
+      <div className='song-button-container'>
+        <button className='song-button'>Add to Cart</button>
+      </div>
     </div>
   )
 }
