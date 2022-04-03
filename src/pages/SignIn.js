@@ -35,6 +35,7 @@ export const SignIn = () => {
             emailInput={emailRef}
             passwordInput={passwordRef}
             btnFunction={login}
+            googleButton='Log in'
         />
     </div>
   )
