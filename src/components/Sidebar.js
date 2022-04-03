@@ -20,9 +20,9 @@ export const Sidebar = ({})=> {
   const [open, setOpen] = useState(true);
 
   // for collpsing sidebar
-  const handleToggle = () => {
-    setOpen(!open);
-  };
+  // const handleToggle = () => {
+  //   setOpen(!open);
+  // };
 
   const sideContainerVariants = {
     true: {
@@ -56,6 +56,10 @@ console.log(sidebarVariants)
       width: "3rem",
     },
   };
+
+  const handleCart = () => {
+    setOpen(!open);
+  };
   return (
     <div className="Sidebar">
       <motion.div
@@ -86,7 +90,7 @@ console.log(sidebarVariants)
                 duration: 0.4,
               },
             }}
-            onClick={handleToggle}
+            // onClick={handleToggle}
             className="lines_icon"
           >
             <TocRounded />
@@ -123,7 +127,8 @@ console.log(sidebarVariants)
                 DASHBOARD
               </motion.h3>
               <Item icon={<DashboardRounded />} name="Home" />
-              <Item icon={< ShoppingCart/>} name="Cart" />
+              <span onClick={handleCart}> 
+              <Item  icon={< ShoppingCart/>} name="Cart"  /> </span>
             </div>
           </div>
           {/* group 2 */}

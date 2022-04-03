@@ -1,6 +1,16 @@
-import React from 'react'
+import { colors } from '@material-ui/core'
+import React, {useState} from 'react'
 
 export const Navbar = () => {
+
+  const [input,setInput] = useState('')
+    
+    const handleChange = (e) => {
+        input(e.target.value)
+    }
+    const handleForm = (e) => {
+      e.preventDefault()
+    }
   return (
     <div className='Navbar'>
       
@@ -10,7 +20,9 @@ export const Navbar = () => {
       </div>
       
       <div className="search">
-        <input type="text" name="" id="" />
+      <form onSubmit={handleForm} >
+      <input onChange={handleChange} id= 'todo-input' type='text' placeholder='Artists, Songs or Albums' />
+</form>
       </div>
       
       <div className="right">
