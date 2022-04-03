@@ -123,6 +123,7 @@ h3{
   border-bottom: 15px;
   display: flex;
   justify-content: center;
+  padding-top: 10px;
 }
 
 .Navbar div {
@@ -188,7 +189,8 @@ h3{
   font-size: 16px;
   font-weight: 600;
   border: 2px solid rgba(255, 255, 255, 0.575);
-  /* background-color: transparent; */
+  background-color: transparent;
+  color: white;
 }
 
 
