@@ -18,7 +18,8 @@ export const Profile = () => {
           <h1 className="profile-name">Metamask address</h1>
         </div>
 
-        <SongList />
+      
+        
 
       </div>
     </div>
