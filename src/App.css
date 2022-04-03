@@ -62,7 +62,9 @@
 } */
 
 .sidebar {
-  background: rgba(255, 255, 255, 0.3);
+  /* background: rgba(255, 255, 255, 0.3); */
+  background-color: rgba(83, 83, 83, 0.342);
+
   /* background-image: linear-gradient(to top, #0D2D44, #0F1525, #171022); */
 
 
@@ -430,12 +432,17 @@ h3{
   /* position: fixed;
   top: 0;
   right: 0; */
-  background-image: linear-gradient(to top, #19182aa9, #202136af, #4046569c);
+  /* background-image: linear-gradient(to top, #19182aa9, #202136af, #4046569c); */
   border-radius: 10px;
   overflow: hidden;
+  backdrop-filter: blur(4px);
+  background-color: rgba(83, 83, 83, 0.342);
 }
 
 .cart-list {
+
+  /* filter: blur(10px); */
+  /* z-index: 2; */
   width: 500px;
   height: 100vh;
   /* border: #b026c2 3px solid; */
