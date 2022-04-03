@@ -14,7 +14,7 @@ export const SongList = ({ songs }) => {
       </div>
 
       <div className="song-container">
-        {songs.map(song => <Song songTrack={song.strTrack} songArtist={song.idArtist}/>)}
+        {songs.map(song => <Song songTrack={song.strTrack} songArtist={song.strArtist}/>)}
       </div>
     </div>
     
