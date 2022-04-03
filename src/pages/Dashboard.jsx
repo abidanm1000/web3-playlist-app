@@ -13,20 +13,8 @@ export const Dashboard = () => {
     .then(response => response.json())
     .then(json => setSongs(json.mvids))
   }, [])
-  
-  // console.log(songs[0].strTrack)
-  // for(let i = 0; i < songs.length; i++) {
-  //   console.log(songs[i])
-  // }
-
-  
 
   console.log(songs)
-  // console.log(songs.forEach(song => song.idAlbum))
-  // let songIds
-  // songs.map(song => console.log(song))
-  // console.log(songIds)
-
 
   return (
     <div className='Dashboard'>

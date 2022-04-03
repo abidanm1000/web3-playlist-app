@@ -38,7 +38,7 @@ export const Sidebar = ({})=> {
   const sidebarVariants = {
     true: {},
     false: {
-      width: "3rem",
+      width: "8rem",
       transition: {
         delay: 0.4,
       },
@@ -51,7 +51,7 @@ export const Sidebar = ({})=> {
       width: "4rem",
     },
     false: {
-      alignSelf: "flex-start",
+      alignSelf: "center",
       marginTop: "2rem",
       width: "3rem",
     },
@@ -123,6 +123,7 @@ export const Sidebar = ({})=> {
               >
                 DASHBOARD
               </motion.h3>
+  
               <Item icon={<DashboardRounded />} name="Home" />
               <Item icon={< ShoppingCart/>} name="Cart" />
             </div>
