@@ -16,7 +16,7 @@ import Item from './Item'
 import { useState } from "react";
 
 
-export const Sidebar = ({})=> {
+export const Sidebar = ()=> {
   const [open, setOpen] = useState(true);
 
 

@@ -2,16 +2,21 @@ import React, {useState} from 'react'
 import { CartItem } from './CartItem'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import MetaLogo from '../images/metamask-logo.png'
+import { Navbar } from './Navbar'
 
 
 
 export const Cart = () => {
-
+ 
+    const handleCart = {
+        
+    }
+    
   
     
   return (
     <div className='cart'>
-        <div className='cart-list'>
+        <div className='cart-list' onClick={handleCart}>
             <div className='cart-header'>
                 <div className='cart-title'>
                     <div className='return-button'><FontAwesomeIcon icon="fa-solid fa-arrow-left" /></div>

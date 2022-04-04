@@ -1,8 +1,15 @@
 
-import React from 'react'
+import React, {useState} from 'react'
 import { ShoppingBasket} from "@material-ui/icons";
 
 export const Navbar = () => {
+  const [open, setOpen] = useState(true);
+
+
+  
+  const handleCart = () => {
+    setOpen(!open);
+  };
 
 
   return (
@@ -21,8 +28,8 @@ export const Navbar = () => {
       
       <div className="right">
       
-        <div className="profilee">
-         {< ShoppingBasket/> }
+        <div className="profilee" >
+        <span onClick={handleCart}> {< ShoppingBasket/> } </span> 
         </div>
         
 
