@@ -30,8 +30,8 @@ window.onclick = function(event) {
       <div className="dropdown">
           <button onClick= {myFunction} className="dropbtn"><FontAwesomeIcon icon="fa-solid fa-arrow-down-wide-short" /></button>
             <div id="myDropdown" className="dropdown-content">
-              <p onClick = {()=> setFilter('mostloved.php?format=track') }>All</p>
-              <p onClick = {()=> setFilter('mostloved.php?format=album')}>Albums</p>
+              <p onClick = {()=> setFilter('mostloved.php?format=track') }>Top songs </p>
+              <p onClick = {()=> setFilter('mostloved.php?format=album')}>Top Albums</p>
             </div>
       </div>
     </div>
