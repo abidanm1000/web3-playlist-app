@@ -11,11 +11,12 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faFire } from '@fortawesome/free-solid-svg-icons'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDownWideShort } from '@fortawesome/free-solid-svg-icons'
 
 
 function App() {
   // icon library - able to use icons in any component
-  library.add(fab, faFire, faArrowLeft, faCirclePlus)
+  library.add(fab, faFire, faArrowLeft, faCirclePlus, faArrowDownWideShort)
   
   return (
     <BrowserRouter>

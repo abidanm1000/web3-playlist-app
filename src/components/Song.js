@@ -11,7 +11,7 @@ export const Song = ({ songTrack, songArtist, songGenre }) => {
         <p className='artist'>{songArtist}</p>
       </div>
 
-      <p className='time'>{songGenre}</p>
+      <p className='genre'>{songGenre}</p>
 
       <div className='price'>
         <FontAwesomeIcon icon="fa-brands fa-ethereum" />

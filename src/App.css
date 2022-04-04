@@ -212,7 +212,7 @@ h3{
 }
 
 .song-header {
-  border-bottom:  1px rgb(150, 147, 147) solid;
+  /* border-bottom:  1px rgb(150, 147, 147) solid; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -220,6 +220,43 @@ h3{
   height: 120px;
   /* padding: 20px; */
   /* border: #3B243E 1px solid; */
+}
+
+.song-list-header {
+  border-bottom:  1px rgb(150, 147, 147) solid;
+  padding: 5px 15px 5px 15px ;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#song-title {
+  /* border:  1px rgb(150, 147, 147) solid; */
+  flex-basis: 100px;
+  flex-grow: 3;
+  text-align: left;
+}
+
+#genre-title {
+  flex-grow: 1;
+  /* border:  1px rgb(150, 147, 147) solid; */
+  flex-basis: 100px;
+  text-align: left;
+
+}
+
+#price-title {
+  flex-grow: 1;
+  /* border:  1px rgb(150, 147, 147) solid; */
+
+}
+
+.filter-control {
+  display: flex;
+  /* text-align: center; */
+  /* justify-content: center; */
+  flex-basis: 100px;
+  /* border: #3c92e7 3px solid; */
 }
 
 .song-container {
@@ -268,14 +305,16 @@ h3{
   color: rgb(175, 171, 171);
 }
 
-.time {
+.genre {
   /* border:  3px rgb(123, 255, 105) solid; */
   flex-grow: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-size: 16px;
   color: rgb(175, 171, 171);
+  flex-basis: 100px;
+  /* text-align: left; */
 }
 
 .price {
@@ -283,7 +322,7 @@ h3{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
+  /* width: 60px; */
   font-size: 16px;
   flex-grow: 1;
 

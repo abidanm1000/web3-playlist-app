@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/FilterControl.css'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 
 export const FilterControl = ({setFilter}) => {
@@ -26,16 +27,13 @@ window.onclick = function(event) {
 
   return (
     <div className="filter-control">
-      <h3>Filter Control</h3>
-
-            <div className="dropdown">
-                <button onClick= {myFunction} className="dropbtn">Filters</button>
-                  <div id="myDropdown" className="dropdown-content">
-                    <p onClick = {()=> setFilter('mostloved.php?format=track') }>All</p>
-                    <p onClick = {()=> setFilter('mostloved.php?format=album')}>Albums</p>
-                    
-                  </div>
+      <div className="dropdown">
+          <button onClick= {myFunction} className="dropbtn"><FontAwesomeIcon icon="fa-solid fa-arrow-down-wide-short" /></button>
+            <div id="myDropdown" className="dropdown-content">
+              <p onClick = {()=> setFilter('mostloved.php?format=track') }>All</p>
+              <p onClick = {()=> setFilter('mostloved.php?format=album')}>Albums</p>
             </div>
+      </div>
     </div>
   )
 }

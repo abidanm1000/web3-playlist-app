@@ -4,7 +4,10 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 export const CarouselItem = ({covers}) => {
   
   const divStyle = {
-    backgroundImage: `url(${covers})`
+    backgroundImage: `url(${covers})`,
+    backgroundSize: '110%',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center'
   };
   
   
