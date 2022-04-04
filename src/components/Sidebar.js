@@ -9,10 +9,8 @@ import {
   ShoppingCart,
   LocalGasStationRounded,
   SignalWifi2BarLockRounded,
-  ColorLensRounded,
   SettingsRemoteRounded,
   ColorLensRounded,
-  
   TocRounded,
   OpenInNew,
   WbSunny,
@@ -137,7 +135,6 @@ console.log(sidebarVariants)
               </motion.h3>
   
               <Item icon={<DashboardRounded />} name="Home" />
-              <span onClick={handleCart}><Item icon={<ColorLensRounded />} name='Theme'/></span>
             </div>
           </div>
           {/* group 2 */}
