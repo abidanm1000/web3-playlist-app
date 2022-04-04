@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import {
+  
   AccountCircleRounded,
   AttachMoneyRounded,
   BarChartRounded,
@@ -9,14 +10,21 @@ import {
   LocalGasStationRounded,
   SignalWifi2BarLockRounded,
   ColorLensRounded,
+  SettingsRemoteRounded,
+  ColorLensRounded,
+  
   TocRounded,
   OpenInNew,
+  WbSunny,
+  MoodRounded,
+  NightsStayOutlined,
 } from "@material-ui/icons";
 import Item from './Item'
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-export const Sidebar = ({ })=> {
+export const Sidebar = ()=> {
   const [open, setOpen] = useState(true);
 
 
@@ -145,13 +153,16 @@ console.log(sidebarVariants)
           </div>
           {/* group 3 */}
           <div className="group">
+          <FontAwesomeIcon icon="fa-solid fa-sun-bright" />
             <motion.h3
               animate={{ opacity: open ? 1 : 0, height: open ? "auto" : 0 }}
             >
+              Themes
               {/* CUSTfdfOMIZATION */}
             </motion.h3>
-            {/* <Item icon={<SettingsRemoteRounded />} name="Segments" />
-            <Item icon={<ColorLensRounded />} name="Themems" /> */}
+            <FontAwesomeIcon icon="fa-solid fa-sun-bright" />
+            <Item icon={<WbSunny/>}  />
+            <Item icon={<NightsStayOutlined />}  />
           </div>
         </motion.div>
       </motion.div>

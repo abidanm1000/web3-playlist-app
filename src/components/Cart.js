@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { CartItem } from './CartItem'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import MetaLogo from '../images/metamask-logo.png'
+import { Navbar } from './Navbar'
 
 
 
