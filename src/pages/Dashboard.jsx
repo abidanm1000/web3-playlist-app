@@ -3,16 +3,25 @@ import { Sidebar } from '../components/Sidebar'
 import { Navbar }  from '../components/Navbar'
 import { SongList } from '../components/SongList'
 import { Cart } from '../components/Cart'
+import { Carousel } from '../components/Carousel'
 
 export const Dashboard = () => {
 
   const [songs, setSongs] = useState([])
-  // theaudiodb.com/api/v1/json/523532/mostloved.php?format=track
+  const [filter, setFilter] = useState('mostloved.php?format=track')
+
+   //theaudiodb.com/api/v1/json/523532/mostloved.php?format=album
+
   useEffect(()=>{
-    fetch(`https://theaudiodb.com/api/v1/json/523532/mostloved.php?format=track`)
+    let getSong = async ()=>{
+
+    await fetch(`https://theaudiodb.com/api/v1/json/523532/${filter}`)
     .then(response => response.json())
     .then(json => setSongs(json.loved))
-  }, [])
+    }
+    
+    getSong();
+  }, [filter])
 
   console.log(songs)
 
@@ -23,8 +32,12 @@ export const Dashboard = () => {
       </div>
       <div className='Content'>
         <Navbar /> 
-        development branch
-        <SongList songs={songs}/>
+        <Carousel songs={songs}/>
+        <SongList 
+        songs={songs}
+        setFilter= {setFilter}
+        
+        />
       </div>
 
       <div className='Cart-Section'>

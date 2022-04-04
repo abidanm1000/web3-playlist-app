@@ -28,8 +28,8 @@ export const Navbar = () => {
       
       <div className="right">
       
-        <div className="profilee" >
-        <span onClick={handleCart}> {< ShoppingBasket/> } </span> 
+        <div className="profilee">
+          {<ShoppingBasket/>}
         </div>
         
 

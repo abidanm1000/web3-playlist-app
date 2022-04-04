@@ -2,7 +2,7 @@ import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 
-export const Song = ({ songTrack, songArtist }) => {
+export const Song = ({ songTrack, songArtist, songGenre }) => {
 
   return (
     <div className='Song'>
@@ -11,7 +11,7 @@ export const Song = ({ songTrack, songArtist }) => {
         <p className='artist'>{songArtist}</p>
       </div>
 
-      <p className='time'>2:30</p>
+      <p className='genre'>{songGenre}</p>
 
       <div className='price'>
         <FontAwesomeIcon icon="fa-brands fa-ethereum" />

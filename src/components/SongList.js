@@ -2,19 +2,27 @@ import React from 'react'
 import {Song} from './Song'
 import {FilterControl} from '../components/FilterControl'
 
-export const SongList = ({ songs }) => {
+export const SongList = ({ songs, setFilter }) => {
   return (
     <div className="Songlist">
     
       <div className='song-header'>
         <div><h1>Song List</h1></div>
+        
         <div>
-          <FilterControl />
+          <h3>Filter Control</h3>
         </div>
       </div>
 
+      <div className='song-list-header'>
+        <div id='song-title'>Title</div>
+        <div id='genre-title'>Genre</div>
+        <div id='price-title'>Price</div>
+        <FilterControl setFilter = {setFilter}/>
+      </div>
+
       <div className="song-container">
-        {songs.map(song => <Song songTrack={song.strTrack} songArtist={song.strArtist}/>)}
+        {songs.map(song => <Song songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)}
       </div>
     </div>
     
