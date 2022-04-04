@@ -157,11 +157,12 @@ console.log(sidebarVariants)
             <motion.h3
               animate={{ opacity: open ? 1 : 0, height: open ? "auto" : 0 }}
             >
+              Themes
               {/* CUSTfdfOMIZATION */}
             </motion.h3>
             <FontAwesomeIcon icon="fa-solid fa-sun-bright" />
-            <Item icon={<WbSunny/>} name="Segments" />
-            <Item icon={<NightsStayOutlined />} name="Themems" />
+            <Item icon={<WbSunny/>}  />
+            <Item icon={<NightsStayOutlined />}  />
           </div>
         </motion.div>
       </motion.div>
