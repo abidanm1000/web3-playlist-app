@@ -3,6 +3,7 @@ import { Sidebar } from '../components/Sidebar'
 import { Navbar }  from '../components/Navbar'
 import { SongList } from '../components/SongList'
 import { Cart } from '../components/Cart'
+import { Carousel } from '../components/Carousel'
 
 export const Dashboard = () => {
 
@@ -23,7 +24,7 @@ export const Dashboard = () => {
       </div>
       <div className='Content'>
         <Navbar /> 
-        development branch
+        <Carousel />
         <SongList songs={songs}/>
       </div>
 
