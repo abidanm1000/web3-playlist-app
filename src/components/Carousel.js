@@ -2,7 +2,7 @@ import React , {useEffect, useState}from 'react'
 import { CarouselItem } from './CarouselItem'
 import '../styles/Carousel.css'
 
-export const Carousel = () => {
+export const Carousel = ({songs}) => {
   const [covers, setCovers] = useState([])
   useEffect(()=>{
     let getCover = async ()=>{
@@ -19,7 +19,7 @@ export const Carousel = () => {
     <div className='Carousel'>
         <div className='carousel-list'>
             {/* <CarouselItem covers = {covers}/> */}
-            {covers.map(cover => <CarouselItem covers = {cover.strAlbum3DThumb} />)}
+            {covers.map(cover => <CarouselItem covers = {cover.strAlbum3DThumb} songName = {cover.strAlbum} songArtist = { cover.strArtist}/>)}
            
          </div>
     </div>

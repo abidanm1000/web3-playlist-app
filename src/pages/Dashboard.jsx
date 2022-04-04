@@ -32,7 +32,7 @@ export const Dashboard = () => {
       </div>
       <div className='Content'>
         <Navbar /> 
-        <Carousel />
+        <Carousel songs={songs}/>
         <SongList 
         songs={songs}
         setFilter= {setFilter}
