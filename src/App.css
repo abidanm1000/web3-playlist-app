@@ -173,15 +173,16 @@ h3{
   border-radius: 50%;
 } */
 
-.right:hover, .left:hover {
-  cursor: pointer;
-}
-
 .search{
   padding: 0 10px 0 10px;
   justify-content: center;
   flex-grow: 2;
 }
+
+.profilee {
+  cursor: pointer;
+}
+
 .login {
   width: 50%;
   display: flex;
