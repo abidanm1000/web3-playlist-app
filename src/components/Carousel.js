@@ -3,6 +3,9 @@ import { CarouselItem } from './CarouselItem'
 import '../styles/Carousel.css'
 
 export const Carousel = ({songs}) => {
+
+  let defaultBackground = 'https://www.kindpng.com/picc/m/81-810478_record-clipart-svg-vinyl-record-svg-hd-png.png'
+
   const [covers, setCovers] = useState([])
   useEffect(()=>{
     let getCover = async ()=>{
@@ -19,7 +22,7 @@ export const Carousel = ({songs}) => {
     <div className='Carousel'>
         <div className='carousel-list'>
             {/* <CarouselItem covers = {covers}/> */}
-            {covers.map(cover => <CarouselItem covers = {cover.strAlbum3DThumb} songName = {cover.strAlbum} songArtist = { cover.strArtist}/>)}
+            {covers.map(cover => <CarouselItem covers = {cover.strAlbum3DThumb || defaultBackground} songName = {cover.strAlbum} songArtist = { cover.strArtist}/>)}
            
          </div>
     </div>
