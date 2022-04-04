@@ -22,7 +22,7 @@ export const Navbar = () => {
       <div className="right">
       
         <div className="profilee">
-         {< ShoppingBasket/> }
+          {<ShoppingBasket/>}
         </div>
         
 
