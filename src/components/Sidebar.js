@@ -11,7 +11,7 @@ import {
   SignalWifi2BarLockRounded,
   ColorLensRounded,
   SettingsRemoteRounded,
-  ColorLensRounded,
+ 
   
   TocRounded,
   OpenInNew,
