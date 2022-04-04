@@ -363,26 +363,25 @@ h3{
 
 
 
-
-
 /* Profile CSS */
 
 .profile-content {
   /* border: 3px hotpink solid; */
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(to top, #2D7786, #9725E6, #B70E06);
+  /* background-image: linear-gradient(to top, #2D7786, #9725E6, #B70E06); */
+  background-image: linear-gradient(to top, #0E324A, #0D2237, #3B243E);
   display: flex;
   align-items: center;
-  justify-content: center;
   color: white;
   font-family: 'Lobster', cursive;
 }
 
 .profile-sidebar {
   /* border: 1px solid blue; */
-  overflow: hidden;
-  background-image: linear-gradient(to top, #2D7786, #9725E6, #B70E06);
+  /* overflow: hidden; */
+  /* background-image: linear-gradient(to top, #2D7786, #9725E6, #B70E06); */
+  border-radius: 10px;
 }
 
 .profile-info {
@@ -391,22 +390,39 @@ h3{
   width: 100%;
   display: flex;
   align-items: center;
+  gap: 20px;
   flex-direction: column;
   padding-top: 100px;
 }
 
-.profile-img {
+#profile-img {
+  transition: 0.2s all;
   border-radius: 50%;
+  border: 2px solid white;
+  height: 200px;
 }
 
-.profile-name {
-  padding-top: 10px;
+#profile-img:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
 }
 
 .profile-stats {
-  padding-top: 10px;
+  transition: 0.5s ease;
+  text-align: center;
+  display: flex;
+  gap: 20px;
 }
 
+.stats:hover {
+  transform: translateY(-10px);
+}
+
+/* .profile-header {
+  background-image: url("");
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+} */
 
 
 /* Cart CSS */
