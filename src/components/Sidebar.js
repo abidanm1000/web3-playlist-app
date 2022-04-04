@@ -8,7 +8,7 @@ import {
   ShoppingCart,
   LocalGasStationRounded,
   SignalWifi2BarLockRounded,
-  
+  ColorLensRounded,
   TocRounded,
   OpenInNew,
 } from "@material-ui/icons";
@@ -16,7 +16,7 @@ import Item from './Item'
 import { useState } from "react";
 
 
-export const Sidebar = ({})=> {
+export const Sidebar = ({ })=> {
   const [open, setOpen] = useState(true);
 
 
@@ -129,8 +129,7 @@ console.log(sidebarVariants)
               </motion.h3>
   
               <Item icon={<DashboardRounded />} name="Home" />
-              <span onClick={handleCart}> 
-              <Item /><img src="/images/sun.svg" alt="" /></span>
+              <span onClick={handleCart}><Item icon={<ColorLensRounded />} name='Theme'/></span>
             </div>
           </div>
           {/* group 2 */}

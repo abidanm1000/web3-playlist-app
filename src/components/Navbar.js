@@ -1,8 +1,8 @@
 
 import React from 'react'
-import { ShoppingBasket} from "@material-ui/icons";
+import { ShoppingCart } from "@material-ui/icons";
 
-export const Navbar = () => {
+export const Navbar = ({ activeCart }) => {
 
 
   return (
@@ -22,7 +22,7 @@ export const Navbar = () => {
       <div className="right">
       
         <div className="profilee">
-          {<ShoppingBasket/>}
+          {<ShoppingCart onClick={activeCart}/>}
         </div>
         
 

@@ -9,6 +9,11 @@ export const Dashboard = () => {
 
   const [songs, setSongs] = useState([])
   const [filter, setFilter] = useState('mostloved.php?format=track')
+  const [cart, setCart] = useState('')
+
+  const showCart = cart ? 'show' : '';
+  const activeCart = () => !cart ? setCart('show') : setCart('');
+  const hideCart = () => cart ? setCart('') : setCart('show');
 
    //theaudiodb.com/api/v1/json/523532/mostloved.php?format=album
 
@@ -25,13 +30,15 @@ export const Dashboard = () => {
 
   console.log(songs)
 
+  
+
   return (
     <div className='Dashboard'>
       <div className='Sidebar'>
         <Sidebar />
       </div>
       <div className='Content'>
-        <Navbar /> 
+        <Navbar activeCart={activeCart}/> 
         <Carousel songs={songs}/>
         <SongList 
         songs={songs}
@@ -41,7 +48,7 @@ export const Dashboard = () => {
       </div>
 
       <div className='Cart-Section'>
-        <Cart />
+        <Cart showCart={showCart} hideCart={hideCart}/>
       </div>
     </div>
   ) 

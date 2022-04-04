@@ -20,6 +20,7 @@
   color: white;
   font-family: 'Lobster', cursive;
   overflow: hidden;
+  position: relative;
 }
 
 
@@ -428,29 +429,27 @@ h3{
 /* Cart CSS */
 .cart {
   width: auto;
-  /* height: 100vh; */
-  /* border: #5daae9 5px solid; */
-  
-  display: none;
+  position: absolute;
+  top: 0;
+  right: 100;
+  display: flex;
   justify-content: center;
   align-items: center;
-  /* position: fixed;
-  top: 0;
-  right: 0; */
-  /* background-image: linear-gradient(to top, #19182aa9, #202136af, #4046569c); */
   border-radius: 10px;
   overflow: hidden;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(60px);
   background-color: rgba(83, 83, 83, 0.342);
+  transition: all ease 1s;
+}
+
+.cart.show {
+  transform: translateX(-500px);
 }
 
 .cart-list {
-
-  /* filter: blur(10px); */
-  /* z-index: 2; */
+  /* border: #b026c2 3px solid; */
   width: 500px;
   height: 100vh;
-  /* border: #b026c2 3px solid; */
   display: flex;
   justify-content: start;
   align-items: center;
