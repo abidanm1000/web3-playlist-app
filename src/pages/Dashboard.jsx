@@ -17,6 +17,20 @@ export const Dashboard = () => {
 
    //theaudiodb.com/api/v1/json/523532/mostloved.php?format=album
 
+   const [data , setData ] = useState([])
+   const [q , setQ] = useState("")
+   
+   useEffect(() => {
+     let getAlbum = async ()=>{
+
+    await fetch(`https://www.theaudiodb.com/api/v1/json/523532/searchalbum.php?s=${q}`)
+     .then(response => response.json())
+     .then(json => setData(json.album))
+     }
+   getAlbum()
+   },[q])
+   
+
   useEffect(()=>{
     let getSong = async ()=>{
 
@@ -38,17 +52,29 @@ export const Dashboard = () => {
         <Sidebar />
       </div>
       <div className='Content'>
-        <Navbar activeCart={activeCart}/> 
-        <Carousel songs={songs}/>
+        <Navbar 
+        activeCart={activeCart}
+        setQ={setQ}
+        q = {q}
+        /> 
+
+        <Carousel 
+        songs={songs}
+        />
+
         <SongList 
         songs={songs}
         setFilter= {setFilter}
+        data = {data}
         
         />
       </div>
 
       <div className='Cart-Section'>
-        <Cart showCart={showCart} hideCart={hideCart}/>
+        <Cart 
+        showCart={showCart} 
+        hideCart={hideCart}
+        />
       </div>
     </div>
   ) 
