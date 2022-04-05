@@ -18,6 +18,13 @@ import { useState } from "react";
 
 export const Sidebar = ({})=> {
   const [open, setOpen] = useState(true);
+  const [theme, setTheme] = useState('');
+
+  // activates light mode when switchTheme runs on click
+   let switchTheme = () => theme === '' ? setTheme('lightMode') : setTheme('');
+
+   // changes sun icon when in light mode
+   let switchIcon = theme === '' ? '/images/sun-icon.png' : '/images/moon-icon.png';
 
 
   const handleToggle = () => {
@@ -130,7 +137,7 @@ console.log(sidebarVariants)
   
               <Item icon={<DashboardRounded />} name="Home" />
               <span onClick={handleCart}> 
-              <Item /><img src="/images/sun.svg" alt="" /></span>
+              <Item /><img src={switchIcon} onClick={switchTheme} alt="" /></span>
             </div>
           </div>
           {/* group 2 */}
@@ -155,9 +162,7 @@ console.log(sidebarVariants)
             <Item icon={<ColorLensRounded />} name="Themems" /> */}
           </div>
         </motion.div>
-      </motion.div>
-
-      
+      </motion.div>      
     </div>
   );
 }
