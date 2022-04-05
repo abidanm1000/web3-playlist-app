@@ -22,9 +22,7 @@ import Item from './Item'
 import { useState } from "react";
 
 
-export const Sidebar = (switchLightTheme, switchDarkTheme)=> {
-  const [open, setOpen] = useState(true);
-export const Sidebar = ({ logout, newAccount })=> {
+export const Sidebar = ({ logout, newAccount, switchDarkTheme, switchLightTheme })=> {
 
   const [open, setOpen] = useState(true);
 
@@ -164,15 +162,15 @@ export const Sidebar = ({ logout, newAccount })=> {
               Themes
               {/* CUSTfdfOMIZATION */}
             </motion.h3>
-            <FontAwesomeIcon icon="fa-solid fa-sun-bright" />
+            {/* <FontAwesomeIcon icon="fa-solid fa-sun-bright" /> */}
             <div>
-              <button onClick={switchLightTheme} >
+              <button onClick={switchDarkTheme} >
                 <Item icon={<WbSunny/>} />
               </button>
-              <button onClick={switchDarkTheme}>
+              <button onClick={switchLightTheme}>
                 <Item icon={<NightsStayOutlined />} />
               </button>
-            </div>
+              </div>  
           </div>
         </motion.div>
       </motion.div>

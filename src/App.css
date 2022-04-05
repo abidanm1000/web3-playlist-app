@@ -60,9 +60,15 @@
 }
 
 /* Light Mode CSS */
-.Content .lightMode {
-  background-color: gainsboro;
-  color: black;
+.Content.lightMode {
+  background-color: #E5E5E5;
+  color: #14213D;
+}
+.Content.lightMode .artist {
+  color: #FCA311;
+}
+.Content.lightMode .genre {
+  color: #14213D;
 }
 
 .lines_icon{

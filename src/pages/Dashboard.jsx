@@ -23,7 +23,7 @@ export const Dashboard = () => {
 
   // activates light mode when switchTheme runs on click
    let switchDarkTheme = () => !theme === '' ? setTheme('') : setTheme('lightMode');
-   let switchLightTheme = () => theme === '' ? setTheme('lightMode') : setTheme('');
+   let switchLightTheme = () => !theme === '' ? setTheme('lightMode') : setTheme('');
   const [user, setUser] = useState({})
 
 
@@ -95,8 +95,12 @@ export const Dashboard = () => {
   return (
     <div className='Dashboard'>
       <div className='Sidebar'>
-        <Sidebar switchDarkTheme = {switchDarkTheme} switchLightTheme = {switchLightTheme} />
-        <Sidebar logout={logout} newAccount={newAccount}/>
+        <Sidebar logout={logout}
+          newAccount={newAccount}
+          switchDarkTheme = {switchDarkTheme}
+          switchLightTheme = {switchLightTheme}
+        />
+        
       </div>
       <div className={`Content ${theme}`} >
         <Navbar activeCart={activeCart}/> 
