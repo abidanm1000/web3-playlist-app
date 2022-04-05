@@ -10,6 +10,11 @@ export const Dashboard = () => {
   const [songs, setSongs] = useState([])
   const [filter, setFilter] = useState('mostloved.php?format=track')
   const [cart, setCart] = useState('')
+  const [theme, setTheme] = useState('');
+
+  // activates light mode when switchTheme runs on click
+   let switchDarkTheme = () => !theme === '' ? setTheme('') : setTheme('lightMode');
+   let switchLightTheme = () => theme === '' ? setTheme('lightMode') : setTheme('');
 
   const showCart = cart ? 'show' : '';
   const activeCart = () => !cart ? setCart('show') : setCart('');
@@ -35,9 +40,9 @@ export const Dashboard = () => {
   return (
     <div className='Dashboard'>
       <div className='Sidebar'>
-        <Sidebar />
+        <Sidebar switchDarkTheme = {switchDarkTheme} switchLightTheme = {switchLightTheme} />
       </div>
-      <div className='Content'>
+      <div className={`Content ${theme}`} >
         <Navbar activeCart={activeCart}/> 
         <Carousel songs={songs}/>
         <SongList 

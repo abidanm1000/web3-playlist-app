@@ -10,12 +10,7 @@ import {
   LocalGasStationRounded,
   SignalWifi2BarLockRounded,
   SettingsRemoteRounded,
-<<<<<<< HEAD
- 
-  
-=======
   ColorLensRounded,
->>>>>>> 55c0cdc1959bdc7d4a9c7d242747d1d6cc126cf6
   TocRounded,
   OpenInNew,
   WbSunny,
@@ -27,16 +22,8 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-export const Sidebar = ()=> {
+export const Sidebar = (switchLightTheme, switchDarkTheme)=> {
   const [open, setOpen] = useState(true);
-  const [theme, setTheme] = useState('');
-
-  // activates light mode when switchTheme runs on click
-   let switchTheme = () => theme === '' ? setTheme('lightMode') : setTheme('');
-
-   // changes sun icon when in light mode
-   let switchIcon = theme === '' ? '/images/sun-icon.png' : '/images/moon-icon.png';
-
 
   const handleToggle = () => {
     setOpen(!open);
@@ -147,11 +134,9 @@ console.log(sidebarVariants)
               </motion.h3>
   
               <Item icon={<DashboardRounded />} name="Home" />
-<<<<<<< HEAD
               <span onClick={handleCart}> 
-              <Item /><img src={switchIcon} onClick={switchTheme} alt="" /></span>
-=======
->>>>>>> 0ee8b1809a9a13e9acf657ede7d0698989be851a
+              {/* <Item icon /> <img src={switchIcon} alt="" /></span> */}
+              </span>
             </div>
           </div>
           {/* group 2 */}
@@ -175,8 +160,13 @@ console.log(sidebarVariants)
               {/* CUSTfdfOMIZATION */}
             </motion.h3>
             <FontAwesomeIcon icon="fa-solid fa-sun-bright" />
-            <Item icon={<WbSunny/>}  />
-            <Item icon={<NightsStayOutlined />}  />
+            <button onClick={switchLightTheme} >
+              <Item icon={<WbSunny/>} />
+            </button>
+            <button onClick={switchDarkTheme}>
+              <Item icon={<NightsStayOutlined />} />
+            </button>
+
           </div>
         </motion.div>
       </motion.div>      
