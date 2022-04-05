@@ -1,6 +1,6 @@
 import React from 'react'
 import { Sidebar } from '../components/Sidebar'
-// import { SongList } from '../components/SongList'
+import { ProfileSongList } from '../components/ProfileSongList'
 
 export const Profile = () => {
 
@@ -36,7 +36,7 @@ export const Profile = () => {
       </div>
 
       <div className="profile-songs">
-
+        <ProfileSongList />
       </div>
 
     </div>

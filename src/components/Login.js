@@ -3,7 +3,7 @@ import '../styles/Login.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 
-export const Login = ({ title, button, href, link, headerStatement, emailInput, passwordInput, btnFunction, googleButton }) => {
+export const Login = ({ title, button, href, link, headerStatement, emailInput, passwordInput, btnFunction, googleButton, googleFunction }) => {
   return (
     <div className='login'>
 
@@ -14,7 +14,7 @@ export const Login = ({ title, button, href, link, headerStatement, emailInput, 
         
       <div className="login-container">
           <h1 className='login-heading'>{title}</h1>
-          <button className='google-button'> <FontAwesomeIcon icon="fa-brands fa-google" /> {googleButton} with Google</button>
+          <button onClick={googleFunction} className='google-button'> <FontAwesomeIcon icon="fa-brands fa-google" /> {googleButton} with Google</button>
           <div>or</div>
           <br/>
           <input ref={emailInput} className='login-email' type='email' placeholder='Email'></input>

@@ -92,7 +92,8 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  width: 100%
+  width: 100%;
+  margin-bottom: 40px;
 }
 h3{
   font-size: 1.3rem;
@@ -440,7 +441,7 @@ h3{
   overflow: hidden;
   backdrop-filter: blur(60px);
   background-color: rgba(83, 83, 83, 0.342);
-  transition: all ease 1s;
+  transition: all ease 500ms;
 }
 
 .cart.show {
@@ -555,7 +556,7 @@ h3{
   display: flex;
   justify-content: start;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column-reverse;
   overflow: scroll;
 }
 
@@ -564,19 +565,15 @@ h3{
 }
 
 .cart-item {
-  padding: 30px;
   /* border: #33d801 2px solid; */
+  padding: 20px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   transition: all 400ms ease;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
   
-}
-
-.cart-item-description {
-  text-align: start;
 }
 
 .cart-item:hover {
@@ -584,6 +581,14 @@ h3{
   box-shadow: rgba(168, 167, 167, 0.493) 0px 4px 5px 2px;
   transform: translateY(-4px);
 }
+
+.cart-item-description {
+  /* border: #33d801 2px solid; */
+  text-align: start;
+  flex-basis: 200px;
+  flex-grow: 3;
+}
+
 
 .cart-song-name {
   font-size: 20px;
@@ -594,7 +599,14 @@ h3{
   color: rgb(167, 166, 166);
 }
 
+.cart-item-price {
+  /* border: #33d801 2px solid; */
+  flex-grow: 1;
+
+}
+
 .cart-remove-button {
+  /* flex-grow: 1; */
   padding: 8px;
   border-radius: 10px;
   border: 2px rgb(172, 171, 171) solid;

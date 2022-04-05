@@ -22,7 +22,7 @@ export const Carousel = ({songs}) => {
     <div className='Carousel'>
         <div className='carousel-list'>
             {/* <CarouselItem covers = {covers}/> */}
-            {covers.map(cover => <CarouselItem covers = {cover.strAlbum3DThumb || defaultBackground} songName = {cover.strAlbum} songArtist = { cover.strArtist}/>)}
+            {covers.map((cover, index) => <CarouselItem key={index} covers = {cover.strAlbum3DThumb || defaultBackground} songName = {cover.strAlbum} songArtist = { cover.strArtist}/>)}
            
          </div>
     </div>

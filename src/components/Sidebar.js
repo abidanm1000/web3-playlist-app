@@ -19,10 +19,10 @@ import {
 } from "@material-ui/icons";
 import Item from './Item'
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-export const Sidebar = ()=> {
+export const Sidebar = ({ logout, newAccount })=> {
+
   const [open, setOpen] = useState(true);
 
 
@@ -50,7 +50,7 @@ export const Sidebar = ()=> {
       },
     },
   };
-console.log(sidebarVariants)
+// console.log(sidebarVariants)
   const profileVariants = {
     true: {
       alignSelf: "center",
@@ -122,6 +122,7 @@ console.log(sidebarVariants)
             <img
               src='./images/me.jpg'
               alt="profile_img"
+              onClick={()=> window.location ='/profile'}
             />
           </motion.div>
           {/* groups */}
@@ -134,7 +135,7 @@ console.log(sidebarVariants)
                 DASHBOARD
               </motion.h3>
   
-              <Item icon={<DashboardRounded />} name="Home" />
+              <div onClick={()=> window.location ='/dashboard'}><Item icon={<DashboardRounded />} name="Home" /></div>
             </div>
           </div>
           {/* group 2 */}
@@ -144,20 +145,18 @@ console.log(sidebarVariants)
             >
               ACCOUNT
             </motion.h3>
-            <Item icon={< OpenInNew />} name="Sign In" />
+            <div onClick={newAccount}><Item icon={<AccountCircleRounded />} name="New Account"/></div>
             {/* <Item icon={< ShoppingCart />} name="Checklist" />{" "} */}
-            <Item icon={<AccountCircleRounded />} name="Sign Up" />
+            <div onClick={logout}><Item icon={< OpenInNew />} name="Logout"/></div>
           </div>
           {/* group 3 */}
           <div className="group">
-          <FontAwesomeIcon icon="fa-solid fa-sun-bright" />
             <motion.h3
               animate={{ opacity: open ? 1 : 0, height: open ? "auto" : 0 }}
             >
               Themes
               {/* CUSTfdfOMIZATION */}
             </motion.h3>
-            <FontAwesomeIcon icon="fa-solid fa-sun-bright" />
             <Item icon={<WbSunny/>}  />
             <Item icon={<NightsStayOutlined />}  />
           </div>
