@@ -19,6 +19,11 @@ export const Dashboard = () => {
   const [profileSongs, setProfileSongs] = useState(songs)
   const [filter, setFilter] = useState('mostloved.php?format=track')
   const [cart, setCart] = useState('')
+  const [theme, setTheme] = useState('');
+
+  // activates light mode when switchTheme runs on click
+   let switchDarkTheme = () => !theme === '' ? setTheme('') : setTheme('lightMode');
+   let switchLightTheme = () => !theme === '' ? setTheme('lightMode') : setTheme('');
   const [user, setUser] = useState({})
 
 
@@ -31,7 +36,7 @@ export const Dashboard = () => {
    //theaudiodb.com/api/v1/json/523532/mostloved.php?format=album
 
    const [data , setData ] = useState([])
-   const [q , setQ] = useState("")
+   const [q , setQ] = useState("drake")
    
    useEffect(() => {
      let getAlbum = async ()=>{
@@ -104,9 +109,14 @@ console.log(data)
   return (
     <div className='Dashboard'>
       <div className='Sidebar'>
-        <Sidebar logout={logout} newAccount={newAccount}/>
+        <Sidebar logout={logout}
+          newAccount={newAccount}
+          switchDarkTheme = {switchDarkTheme}
+          switchLightTheme = {switchLightTheme}
+        />
+        
       </div>
-      <div className='Content'>
+      <div className={`Content ${theme}`}>
         <Navbar 
         activeCart={activeCart}
         setQ={setQ}

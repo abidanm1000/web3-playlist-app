@@ -60,27 +60,16 @@
 }
 
 /* Light Mode CSS */
-.Songlist.lightMode {
-  background-color: gainsboro;
+.Content.lightMode {
+  background-color: #E5E5E5;
+  color: #14213D;
 }
-
-.song-header.lightMode {
-  color: black;
+.Content.lightMode .artist {
+  color: #FCA311;
 }
-
-.Song.lightMode {
-  color: black;
+.Content.lightMode .genre {
+  color: #14213D;
 }
-
-.price.lightMode {
-  color: black;
-}
-
-.song-button-container.lightMode {
-  color: black;
-  background-color: #90f6ea;
-}
-
 
 .lines_icon{
   border-radius: 5px;

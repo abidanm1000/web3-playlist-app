@@ -22,7 +22,7 @@ import Item from './Item'
 import { useState } from "react";
 
 
-export const Sidebar = ({ logout, newAccount })=> {
+export const Sidebar = ({ logout, newAccount, switchDarkTheme, switchLightTheme })=> {
 
   const [open, setOpen] = useState(true);
 
@@ -136,6 +136,10 @@ export const Sidebar = ({ logout, newAccount })=> {
                 DASHBOARD
               </motion.h3>
   
+              <Item icon={<DashboardRounded />} name="Home" />
+              <span onClick={handleCart}> 
+              {/* <Item icon /> <img src={switchIcon} alt="" /></span> */}
+              </span>
               <div onClick={()=> window.location ='/dashboard'}><Item icon={<DashboardRounded />} name="Home" /></div>
             </div>
           </div>
@@ -158,8 +162,15 @@ export const Sidebar = ({ logout, newAccount })=> {
               Themes
               {/* CUSTfdfOMIZATION */}
             </motion.h3>
-            <Item icon={<WbSunny/>}  />
-            <Item icon={<NightsStayOutlined />}  />
+            {/* <FontAwesomeIcon icon="fa-solid fa-sun-bright" /> */}
+            <div>
+              <button onClick={switchDarkTheme} >
+                <Item icon={<WbSunny/>} />
+              </button>
+              <button onClick={switchLightTheme}>
+                <Item icon={<NightsStayOutlined />} />
+              </button>
+              </div>  
           </div>
         </motion.div>
       </motion.div>
@@ -168,4 +179,3 @@ export const Sidebar = ({ logout, newAccount })=> {
     </div>
   );
 }
-

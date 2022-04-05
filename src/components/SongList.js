@@ -22,8 +22,8 @@ export const SongList = ({ songs, setFilter, data , profileSongs, userId}) => {
       </div>
 
       <div className="song-container">
-        {/* {songs.map(song => <Song songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)} */}
-        {/* {data.map(datas => <Song albumName={datas.strAlbum} songArtists={datas.strArtist} />)} */}
+       
+        {data.map(datas => <Song albumName={datas.strAlbum} songArtists={datas.strArtist} />)}
         {songs.map((song, index) => <Song key={index} profileSongs={profileSongs} userId={userId} songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)}
       </div>
     </div>
