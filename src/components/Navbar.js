@@ -19,7 +19,7 @@ export const Navbar = ({ activeCart, setQ, q }) => {
 
 // console.log(data)
 
-
+// console.log(q)
   return (
     <div className='Navbar'>
       
@@ -40,9 +40,11 @@ export const Navbar = ({ activeCart, setQ, q }) => {
           {<ShoppingCart onClick={activeCart}/>}
         </div>
         
-       
-      </div>console.log(q)
+         
+      </div>
+   
     </div>
-    
+  
   )
+  
 }

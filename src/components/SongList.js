@@ -2,11 +2,11 @@ import React from 'react'
 import {Song} from './Song'
 import {FilterControl} from '../components/FilterControl'
 
-export const SongList = ({ songs, setFilter, data }) => {
+export const SongList = ({ songs, setFilter, data , profileSongs, userId}) => {
   return (
     <div className="Songlist">
     
-      <div className='song-header'>
+      <div className='song-header' >
         <div><h1>Song List</h1></div>
         
         <div>
@@ -22,8 +22,9 @@ export const SongList = ({ songs, setFilter, data }) => {
       </div>
 
       <div className="song-container">
-        {songs.map(song => <Song songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)}
+        {/* {songs.map(song => <Song songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)} */}
         {/* {data.map(datas => <Song albumName={datas.strAlbum} songArtists={datas.strArtist} />)} */}
+        {songs.map((song, index) => <Song key={index} profileSongs={profileSongs} userId={userId} songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)}
       </div>
     </div>
     

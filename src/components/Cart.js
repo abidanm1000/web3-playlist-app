@@ -1,15 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { CartItem } from './CartItem'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import MetaLogo from '../images/metamask-logo.png'
-import { Navbar } from './Navbar'
 
 
+export const Cart = ({ showCart, hideCart, userId, profileSongs }) => {
 
-export const Cart = ({showCart, hideCart}) => {
-
-    
-  
     
   return (
     <div className={`cart ${showCart}`}>
@@ -25,22 +21,7 @@ export const Cart = ({showCart, hideCart}) => {
             </div>
             
             <div className='cart-items'>
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-                <CartItem />
-
+                {profileSongs.map((song, index) => <CartItem key={index} song={song} userId={userId} profileSongs={profileSongs} songTrack={song.track} songArtist={song.artist} songGenre={song.genre} songPrice={song.price}/>)}
             </div>
         </div>
     </div>
