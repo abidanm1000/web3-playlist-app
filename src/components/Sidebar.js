@@ -10,12 +10,7 @@ import {
   LocalGasStationRounded,
   SignalWifi2BarLockRounded,
   SettingsRemoteRounded,
-<<<<<<< HEAD
- 
-  
-=======
   ColorLensRounded,
->>>>>>> 55c0cdc1959bdc7d4a9c7d242747d1d6cc126cf6
   TocRounded,
   OpenInNew,
   WbSunny,
