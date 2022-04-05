@@ -29,7 +29,6 @@ export const Carousel = ({songs}) => {
     getCover();
   }, [])
 
-
 // const {id} = useParams()
 
 const [albumNumber, setAlbumNumber] = useState()
@@ -45,7 +44,7 @@ const handleOpen = (id) => {
   setOpen (true);
 }
 const handleClose = () => setOpen(false);
-console.log(albumNumber)
+// console.log(albumNumber)
 
 
 
@@ -73,17 +72,17 @@ const style = {
     >
       <Box sx={style}>
         <Typography id="modal-modal-title " variant="h6" component="h2">
-          {albumNumber.strAlbum}
+          {/*{albumNumber.strAlbum}*/}
         </Typography>
         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          {albumNumber.strArtist}
+          {/*{albumNumber.strArtist}*/}
           {/* {albumNumber.strGenre} */}
         </Typography>
       </Box>
     </Modal>
     <div className='Carousel'>
         <div className='carousel-list'>
-            {covers.map((cover, index) =>  <div className='carousel-modal' onClick={()=> handleOpen(cover.idAlbum)}><CarouselItem key={index} covers = {cover.strAlbum3DThumb || defaultBackground} songName = {cover.strAlbum} songArtist = { cover.strArtist} /></div>)}
+            {covers.map((cover, index) =>  <div key={index} className='carousel-modal' onClick={()=> handleOpen(cover.idAlbum)}><CarouselItem covers = {cover.strAlbum3DThumb || defaultBackground} songName = {cover.strAlbum} songArtist = { cover.strArtist} /></div>)}
            
          </div>
     </div>

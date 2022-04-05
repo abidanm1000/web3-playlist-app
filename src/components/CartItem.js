@@ -4,7 +4,7 @@ import db from '../utils/firebase'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 export const CartItem = ({ userId, profileSongs, song, songTrack, songArtist, songPrice }) => {
-  console.log(profileSongs)
+  // console.log(profileSongs)
   // removing individual song
   const removeSong = () => {
     let songs = profileSongs.map(item => song.id === item.id ? {...item, clicked: !item.clicked} : item)

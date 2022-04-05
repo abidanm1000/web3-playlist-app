@@ -16,7 +16,7 @@ export const ProfileSongList = ({ profileSongs }) => {
       </div>
 
       <div className="song-container">
-        {profileSongs.map(song => <Song songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)}
+  {/*{profileSongs.map(song => <Song songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)}*/}
       </div>
     </div>
   )
