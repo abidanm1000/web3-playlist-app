@@ -10,14 +10,14 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faFire } from '@fortawesome/free-solid-svg-icons'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons'
 import { faArrowDownWideShort } from '@fortawesome/free-solid-svg-icons'
 import { CarouselItem } from './components/CarouselItem';
 
 
 function App() {
   // icon library - able to use icons in any component
-  library.add(fab, faFire, faArrowLeft, faCirclePlus, faArrowDownWideShort)
+  library.add(fab, faFire, faArrowLeft, faCirclePlay, faArrowDownWideShort)
   
   return (
   
