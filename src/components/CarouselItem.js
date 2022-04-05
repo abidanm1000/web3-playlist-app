@@ -1,6 +1,8 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
+
+
 export const CarouselItem = ({covers, songName, songArtist}) => {
   
   const divStyle = {
@@ -9,9 +11,12 @@ export const CarouselItem = ({covers, songName, songArtist}) => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'
   };
+
   
   
   return (
+
+
     <div className='Carousel-Item' style = {divStyle}>
         <div className='detail-container'>
             <div className='item-details'>
@@ -25,5 +30,6 @@ export const CarouselItem = ({covers, songName, songArtist}) => {
             <FontAwesomeIcon className='plus-icon' icon="fa-solid fa-circle-plus" />
         </div>
     </div>
+   
   )
 }

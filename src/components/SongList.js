@@ -22,7 +22,7 @@ export const SongList = ({ songs, setFilter }) => {
       </div>
 
       <div className="song-container">
-        {songs.map(song => <Song songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)}
+        {songs.map(song => <Song  key = {song.idTrack} songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)}
       </div>
     </div>
     
