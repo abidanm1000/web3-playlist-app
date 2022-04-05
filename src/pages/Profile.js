@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Sidebar } from '../components/Sidebar'
+
+// import axios from 'axios'
 // import { SongList } from '../components/SongList'
 
 export const Profile = () => {
 
   let defaultProfile = "https://ca.slack-edge.com/T02MA26UL8P-U02Q08UP40K-ba393d9a62b5-512"
+
+  // const [profileImg, setProfileImg] = useState(null)
+
+  // const imgSelectHandler = (e) => {
+  //   setProfileImg(e.target.files[0])
+  // }
+
+  // const imgUploadHandler = () => {
+  //   const fd = new FormData();
+  //   fd.append('image', profileImg, profileImg.name)
+  //   axios.post('gs://music-marketplace-a0438.appspot.com', fd)
+  //   .then(res => {
+  //     console.log(res)
+  //   })
+  // }
+
+
 
   return (
     <div className="profile-content">
@@ -18,8 +37,10 @@ export const Profile = () => {
       </div>
 
       <div className="profile-info">
-
+        {/* <input type="file" onChange={imgSelectHandler} /> */}
         <img id="profile-img" src={defaultProfile} alt="profile" />
+        {/* <button onClick={imgUploadHandler}>Upload</button> */}
+
 
         <h1 className="profile-name">Welcome back, <span>Hassam!</span></h1>
 
