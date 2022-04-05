@@ -1,6 +1,8 @@
 import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
+
+
 export const CarouselItem = ({covers, songName, songArtist}) => {
   const ethPrice = 0.00028
   
@@ -10,9 +12,12 @@ export const CarouselItem = ({covers, songName, songArtist}) => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'
   };
+
   
   
   return (
+
+
     <div className='Carousel-Item' style = {divStyle}>
         <div className='detail-container'>
             <div className='item-details'>
@@ -26,5 +31,6 @@ export const CarouselItem = ({covers, songName, songArtist}) => {
             <FontAwesomeIcon icon="fa-solid fa-circle-play" className='play-icon'/>
         </div>
     </div>
+   
   )
 }

@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import {  Route, Routes } from 'react-router-dom'
 
 // page imports
 import { Dashboard } from './pages/Dashboard'
@@ -12,6 +12,7 @@ import { faFire } from '@fortawesome/free-solid-svg-icons'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons'
 import { faArrowDownWideShort } from '@fortawesome/free-solid-svg-icons'
+import { CarouselItem } from './components/CarouselItem';
 
 
 function App() {
@@ -19,16 +20,18 @@ function App() {
   library.add(fab, faFire, faArrowLeft, faCirclePlay, faArrowDownWideShort)
   
   return (
-    <BrowserRouter>
+  
       <div className="App">
         <Routes>
           <Route path='/dashboard' element={<Dashboard />}/> 
           <Route path="/signup" element={<SignUp />}/>
           <Route path="/" element={<SignIn />}/>
           <Route path="/profile" element={<Profile />}/>
+          <Route path="/carousel-item/:id" element={<CarouselItem />}/>
+
         </Routes>
       </div>
-    </BrowserRouter>
+ 
   );
 }
 

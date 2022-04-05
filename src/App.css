@@ -49,7 +49,7 @@
   background-color: rgba(83, 83, 83, 0.342);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(5.5px);
-  border-radius:10px;
+  /* border-radius:10px; */
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   display: flex;
   flex-direction: column;
@@ -58,6 +58,29 @@
   height: 100vh;
   width: 14rem;
 }
+
+/* Light Mode CSS */
+.Songlist.lightMode {
+  background-color: gainsboro;
+}
+
+.song-header.lightMode {
+  color: black;
+}
+
+.Song.lightMode {
+  color: black;
+}
+
+.price.lightMode {
+  color: black;
+}
+
+.song-button-container.lightMode {
+  color: black;
+  background-color: #90f6ea;
+}
+
 
 .lines_icon{
   border-radius: 5px;
@@ -121,13 +144,14 @@ h3{
 }
 
 .Navbar {
-  /* border:  3px rgb(123, 255, 105) solid; */
-  height: 7%;
+/*  
+  border: 3px rgb(123, 255, 105) solid; */
+  height: 70px;
   width: 100%;
   border-bottom: 15px;
   display: flex;
   justify-content: center;
-  padding-top: 80px;
+  margin: 30px 0 80px;
 }
 
 .Navbar div {
