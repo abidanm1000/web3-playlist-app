@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import {
+  
   AccountCircleRounded,
   AttachMoneyRounded,
   BarChartRounded,
@@ -8,15 +9,25 @@ import {
   ShoppingCart,
   LocalGasStationRounded,
   SignalWifi2BarLockRounded,
+  SettingsRemoteRounded,
+<<<<<<< HEAD
+ 
   
+=======
+  ColorLensRounded,
+>>>>>>> 55c0cdc1959bdc7d4a9c7d242747d1d6cc126cf6
   TocRounded,
   OpenInNew,
+  WbSunny,
+  MoodRounded,
+  NightsStayOutlined,
 } from "@material-ui/icons";
 import Item from './Item'
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-export const Sidebar = ({})=> {
+export const Sidebar = ()=> {
   const [open, setOpen] = useState(true);
   const [theme, setTheme] = useState('');
 
@@ -136,8 +147,11 @@ console.log(sidebarVariants)
               </motion.h3>
   
               <Item icon={<DashboardRounded />} name="Home" />
+<<<<<<< HEAD
               <span onClick={handleCart}> 
               <Item /><img src={switchIcon} onClick={switchTheme} alt="" /></span>
+=======
+>>>>>>> 0ee8b1809a9a13e9acf657ede7d0698989be851a
             </div>
           </div>
           {/* group 2 */}
@@ -153,13 +167,16 @@ console.log(sidebarVariants)
           </div>
           {/* group 3 */}
           <div className="group">
+          <FontAwesomeIcon icon="fa-solid fa-sun-bright" />
             <motion.h3
               animate={{ opacity: open ? 1 : 0, height: open ? "auto" : 0 }}
             >
+              Themes
               {/* CUSTfdfOMIZATION */}
             </motion.h3>
-            {/* <Item icon={<SettingsRemoteRounded />} name="Segments" />
-            <Item icon={<ColorLensRounded />} name="Themems" /> */}
+            <FontAwesomeIcon icon="fa-solid fa-sun-bright" />
+            <Item icon={<WbSunny/>}  />
+            <Item icon={<NightsStayOutlined />}  />
           </div>
         </motion.div>
       </motion.div>      

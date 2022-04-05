@@ -3,18 +3,34 @@ import { Sidebar } from '../components/Sidebar'
 import { Navbar }  from '../components/Navbar'
 import { SongList } from '../components/SongList'
 import { Cart } from '../components/Cart'
+import { Carousel } from '../components/Carousel'
 
 export const Dashboard = () => {
 
   const [songs, setSongs] = useState([])
-  // theaudiodb.com/api/v1/json/523532/mostloved.php?format=track
+  const [filter, setFilter] = useState('mostloved.php?format=track')
+  const [cart, setCart] = useState('')
+
+  const showCart = cart ? 'show' : '';
+  const activeCart = () => !cart ? setCart('show') : setCart('');
+  const hideCart = () => cart ? setCart('') : setCart('show');
+
+   //theaudiodb.com/api/v1/json/523532/mostloved.php?format=album
+
   useEffect(()=>{
-    fetch(`https://theaudiodb.com/api/v1/json/523532/mostloved.php?format=track`)
+    let getSong = async ()=>{
+
+    await fetch(`https://theaudiodb.com/api/v1/json/523532/${filter}`)
     .then(response => response.json())
     .then(json => setSongs(json.loved))
-  }, [])
+    }
+    
+    getSong();
+  }, [filter])
 
   console.log(songs)
+
+  
 
   return (
     <div className='Dashboard'>
@@ -22,13 +38,17 @@ export const Dashboard = () => {
         <Sidebar />
       </div>
       <div className='Content'>
-        <Navbar /> 
-        development branch
-        <SongList songs={songs}/>
+        <Navbar activeCart={activeCart}/> 
+        <Carousel songs={songs}/>
+        <SongList 
+        songs={songs}
+        setFilter= {setFilter}
+        
+        />
       </div>
 
       <div className='Cart-Section'>
-        <Cart />
+        <Cart showCart={showCart} hideCart={hideCart}/>
       </div>
     </div>
   ) 

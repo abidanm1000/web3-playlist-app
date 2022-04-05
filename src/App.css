@@ -11,7 +11,7 @@
 .Dashboard {
   /* border: 3px hotpink solid; */
   text-align: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-image: linear-gradient(to top, #0E324A, #0D2237, #3B243E);
   display: flex;
@@ -19,6 +19,8 @@
   justify-content: space-between;
   color: white;
   font-family: 'Lobster', cursive;
+  overflow: hidden;
+  position: relative;
 }
 
 
@@ -128,8 +130,9 @@ h3{
 
 .Content {
   /* border: 3px rgb(105, 170, 255) solid; */
+  overflow: hidden;
   height: 100vh;
-  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -146,7 +149,7 @@ h3{
   border-bottom: 15px;
   display: flex;
   justify-content: center;
-  padding-top: 10px;
+  padding-top: 80px;
 }
 
 .Navbar div {
@@ -186,19 +189,23 @@ h3{
   height: 35px;
 }
 
-.profilee img {
+/* .profilee div {
+  width: 50px;
+  height: 50px;
+  border: #883e92 1px solid;
   border-radius: 50%;
-}
-
-.right:hover, .left:hover {
-  cursor: pointer;
-}
+} */
 
 .search{
   padding: 0 10px 0 10px;
   justify-content: center;
   flex-grow: 2;
 }
+
+.profilee {
+  cursor: pointer;
+}
+
 .login {
   width: 50%;
   display: flex;
@@ -233,7 +240,7 @@ h3{
 }
 
 .song-header {
-  border-bottom:  1px rgb(150, 147, 147) solid;
+  /* border-bottom:  1px rgb(150, 147, 147) solid; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -241,6 +248,43 @@ h3{
   height: 120px;
   /* padding: 20px; */
   /* border: #3B243E 1px solid; */
+}
+
+.song-list-header {
+  border-bottom:  1px rgb(150, 147, 147) solid;
+  padding: 5px 15px 5px 15px ;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#song-title {
+  /* border:  1px rgb(150, 147, 147) solid; */
+  flex-basis: 100px;
+  flex-grow: 3;
+  text-align: left;
+}
+
+#genre-title {
+  flex-grow: 1;
+  /* border:  1px rgb(150, 147, 147) solid; */
+  flex-basis: 100px;
+  text-align: left;
+
+}
+
+#price-title {
+  flex-grow: 1;
+  /* border:  1px rgb(150, 147, 147) solid; */
+
+}
+
+.filter-control {
+  display: flex;
+  /* text-align: center; */
+  /* justify-content: center; */
+  flex-basis: 100px;
+  /* border: #3c92e7 3px solid; */
 }
 
 .song-container {
@@ -281,6 +325,9 @@ h3{
   text-align: left;
   flex-grow: 3;
   flex-basis: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .artist {
@@ -289,14 +336,16 @@ h3{
   color: rgb(175, 171, 171);
 }
 
-.time {
+.genre {
   /* border:  3px rgb(123, 255, 105) solid; */
   flex-grow: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-size: 16px;
   color: rgb(175, 171, 171);
+  flex-basis: 100px;
+  /* text-align: left; */
 }
 
 .price {
@@ -304,7 +353,7 @@ h3{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
+  /* width: 60px; */
   font-size: 16px;
   flex-grow: 1;
 
@@ -339,26 +388,25 @@ h3{
 
 
 
-
-
 /* Profile CSS */
 
 .profile-content {
   /* border: 3px hotpink solid; */
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(to top, #2D7786, #9725E6, #B70E06);
+  /* background-image: linear-gradient(to top, #2D7786, #9725E6, #B70E06); */
+  background-image: linear-gradient(to top, #0E324A, #0D2237, #3B243E);
   display: flex;
   align-items: center;
-  justify-content: center;
   color: white;
   font-family: 'Lobster', cursive;
 }
 
 .profile-sidebar {
   /* border: 1px solid blue; */
-  overflow: hidden;
-  background-image: linear-gradient(to top, #2D7786, #9725E6, #B70E06);
+  /* overflow: hidden; */
+  /* background-image: linear-gradient(to top, #2D7786, #9725E6, #B70E06); */
+  border-radius: 10px;
 }
 
 .profile-info {
@@ -367,49 +415,65 @@ h3{
   width: 100%;
   display: flex;
   align-items: center;
+  gap: 20px;
   flex-direction: column;
   padding-top: 100px;
 }
 
-.profile-img {
+#profile-img {
+  transition: 0.2s all;
   border-radius: 50%;
+  border: 2px solid white;
+  height: 200px;
 }
 
-.profile-name {
-  padding-top: 10px;
+#profile-img:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
 }
 
 .profile-stats {
-  padding-top: 10px;
+  transition: 0.5s ease;
+  text-align: center;
+  display: flex;
+  gap: 20px;
 }
 
+.stats:hover {
+  transform: translateY(-10px);
+}
+
+/* .profile-header {
+  background-image: url("");
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+} */
 
 
 /* Cart CSS */
 .cart {
   width: auto;
-  /* height: 100vh; */
-  /* border: #5daae9 5px solid; */
+  position: absolute;
+  top: 0;
+  right: 100;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* position: fixed;
-  top: 0;
-  right: 0; */
-  /* background-image: linear-gradient(to top, #19182aa9, #202136af, #4046569c); */
   border-radius: 10px;
   overflow: hidden;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(60px);
   background-color: rgba(83, 83, 83, 0.342);
+  transition: all ease 1s;
+}
+
+.cart.show {
+  transform: translateX(-500px);
 }
 
 .cart-list {
-
-  /* filter: blur(10px); */
-  /* z-index: 2; */
+  /* border: #b026c2 3px solid; */
   width: 500px;
   height: 100vh;
-  /* border: #b026c2 3px solid; */
   display: flex;
   justify-content: start;
   align-items: center;
