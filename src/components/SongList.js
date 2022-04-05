@@ -2,7 +2,7 @@ import React from 'react'
 import {Song} from './Song'
 import {FilterControl} from '../components/FilterControl'
 
-export const SongList = ({ songs, setFilter }) => {
+export const SongList = ({ songs, setFilter, profileSongs, userId }) => {
   return (
     <div className="Songlist">
     
@@ -22,7 +22,7 @@ export const SongList = ({ songs, setFilter }) => {
       </div>
 
       <div className="song-container">
-        {songs.map(song => <Song songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)}
+        {songs.map((song, index) => <Song key={index} profileSongs={profileSongs} userId={userId} songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)}
       </div>
     </div>
     
