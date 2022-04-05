@@ -402,7 +402,7 @@ h3{
   align-items: center;
   gap: 20px;
   flex-direction: column;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 #profile-img {
@@ -426,6 +426,10 @@ h3{
 
 .stats:hover {
   transform: translateY(-10px);
+}
+
+.profile-songs {
+  padding-top: 100px;
 }
 
 /* .profile-header {
