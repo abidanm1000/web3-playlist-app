@@ -5,7 +5,7 @@ import db from '../utils/firebase'
 
 export const Song = ({ songTrack, songArtist, songGenre, userId, profileSongs }) => {
 
-  const ethPrice = 0.00028
+  const ethPrice = 0.000280
 
   // generating IDs for added songs
   const generateId = array => {
