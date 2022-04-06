@@ -19,7 +19,12 @@ export const Dashboard = () => {
   const [profileSongs, setProfileSongs] = useState(songs)
   const [filter, setFilter] = useState('mostloved.php?format=track')
   const [cart, setCart] = useState('')
+  const [theme, setTheme] = useState('');
   const [user, setUser] = useState({})
+
+  // activates light mode when switchTheme runs on click
+   let switchDarkTheme = () => !theme === '' ? setTheme('') : setTheme('lightMode');
+   let switchLightTheme = () => !theme === '' ? setTheme('lightMode') : setTheme('');
 
 
 
@@ -29,6 +34,26 @@ export const Dashboard = () => {
   const hideCart = () => cart ? setCart('') : setCart('show');
 
    //theaudiodb.com/api/v1/json/523532/mostloved.php?format=album
+
+   const [data , setData ] = useState([])
+   const [q , setQ] = useState("")
+   
+     let handleChange = async (e) => { 
+       e.preventDefault()
+       
+       if(data){
+      await fetch(`https://www.theaudiodb.com/api/v1/json/523532/searchalbum.php?s=${q}`)
+          .then(response => response.json())
+          .then(json => setData(json.album))
+        }
+      setSongs([])
+     }
+
+    
+     
+   
+   
+   
 
 
   // fetching API and checking authentication
@@ -64,7 +89,7 @@ export const Dashboard = () => {
     return unsub
   }, [user, filter])
 
-  // console.log(songs)
+  
 
   
 
@@ -86,25 +111,50 @@ export const Dashboard = () => {
     window.location = '/signup'
 }
   
-
+console.log(data)
   return (
     <div className='Dashboard'>
-      <div className='Sidebar'>
-        <Sidebar logout={logout} newAccount={newAccount}/>
+      <div >
+        <Sidebar logout={logout}
+          newAccount={newAccount}
+          switchDarkTheme = {switchDarkTheme}
+          switchLightTheme = {switchLightTheme}
+          theme={theme}
+        />
+        
       </div>
-      <div className='Content'>
-        <Navbar activeCart={activeCart}/> 
-        <Carousel songs={songs}/>
+      <div className={`Content ${theme}`}>
+        <Navbar 
+        activeCart={activeCart}
+        setQ={setQ}
+        q = {q}
+        handleChange = {handleChange}
+        setSongs ={setSongs}
+        songs = {songs}
+        
+        /> 
+
+        <Carousel 
+        songs={songs}
+        />
+
         <SongList 
         songs={songs}
         setFilter= {setFilter}
+        data = {data}
+        
         profileSongs={profileSongs}
         userId={user}
         />
       </div>
 
       <div className='Cart-Section'>
-        <Cart showCart={showCart} hideCart={hideCart} userId={user} profileSongs={profileSongs}/>
+        <Cart 
+        showCart={showCart}
+         hideCart={hideCart} 
+         userId={user} 
+         profileSongs={profileSongs}
+        />
       </div>
     </div>
   ) 

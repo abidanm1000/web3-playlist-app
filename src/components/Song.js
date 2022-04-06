@@ -3,9 +3,9 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { setDoc, doc } from 'firebase/firestore'
 import db from '../utils/firebase'
 
-export const Song = ({ songTrack, songArtist, songGenre, userId, profileSongs }) => {
+export const Song = ({ songTrack, songArtist, songGenre, userId, profileSongs, albumName, songArtists }) => {
 
-  const ethPrice = 0.00028
+  const ethPrice = 0.000280
 
   // generating IDs for added songs
   const generateId = array => {
@@ -13,7 +13,7 @@ export const Song = ({ songTrack, songArtist, songGenre, userId, profileSongs })
     // console.log(Math.max(...taskIDs))
     if(songIDs.length === 0) {
       return 0
-    } else {
+    }else {
       return Math.max(...songIDs) + 1
     }
   }
@@ -38,14 +38,11 @@ export const Song = ({ songTrack, songArtist, songGenre, userId, profileSongs })
 
     setDoc(doc(db, 'users', userId), payload)
   }
-  
-
- 
   return (
     <div className='Song'>
       <div className='song-info'>
-        <p>{songTrack}</p>
-        <p className='artist'>{songArtist}</p>
+        <p>{songTrack || albumName}</p>
+        <p className='artist'>{songArtist || songArtists}</p>
       </div>
 
       <p className='genre'>{songGenre}</p>

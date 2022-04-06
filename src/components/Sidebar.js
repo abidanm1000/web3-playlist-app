@@ -22,7 +22,7 @@ import Item from './Item'
 import { useState } from "react";
 
 
-export const Sidebar = ({ logout, newAccount })=> {
+export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLightTheme })=> {
 
   const [open, setOpen] = useState(true);
 
@@ -68,7 +68,7 @@ export const Sidebar = ({ logout, newAccount })=> {
     setOpen(!open);
   };
   return (
-    <div className="Sidebar">
+    <div className={`Sidebar ${theme}`}>
       <motion.div
         // dataOpen={open}
         variants={sideContainerVariants}
@@ -116,7 +116,7 @@ export const Sidebar = ({ logout, newAccount })=> {
               boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
               backdropFilter: "blur(5.5px)",
               WebkitBackdropFilter: "blur(5.5px)",
-              border: "1px solid rgba( 255, 255, 255, 0.18 )",
+              border: "2px solid rgba( 255, 255, 255, 0.18 )",
               cursor: "pointer",
             }}
           >
@@ -136,6 +136,7 @@ export const Sidebar = ({ logout, newAccount })=> {
                 DASHBOARD
               </motion.h3>
   
+              
               <div onClick={()=> window.location ='/dashboard'}><Item icon={<DashboardRounded />} name="Home" /></div>
             </div>
           </div>
@@ -158,8 +159,15 @@ export const Sidebar = ({ logout, newAccount })=> {
               Themes
               {/* CUSTfdfOMIZATION */}
             </motion.h3>
-            <Item icon={<WbSunny/>}  />
-            <Item icon={<NightsStayOutlined />}  />
+            {/* <FontAwesomeIcon icon="fa-solid fa-sun-bright" /> */}
+            <div>
+              <div onClick={switchDarkTheme} >
+                <Item icon={<WbSunny/>} />
+              </div>
+              <div onClick={switchLightTheme}>
+                <Item icon={<NightsStayOutlined />} />
+              </div>
+              </div>  
           </div>
         </motion.div>
       </motion.div>
@@ -168,4 +176,3 @@ export const Sidebar = ({ logout, newAccount })=> {
     </div>
   );
 }
-

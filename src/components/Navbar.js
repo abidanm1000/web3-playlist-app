@@ -1,10 +1,25 @@
 
-import React from 'react'
+// import React, {useEffect, useState} from 'react'
 import { ShoppingCart } from "@material-ui/icons";
 
-export const Navbar = ({ activeCart }) => {
+
+export const Navbar = ({ activeCart, setQ, q, handleChange, setSongs, songs }) => {
+
+// const [data , setData ] = useState([])
+// const [q , setQ] = useState("")
+
+// useEffect(() => {
+  
+//   fetch(`https://www.theaudiodb.com/api/v1/json/523532/searchalbum.php?s=${q}`)
+//   .then((response)=> response.json())
+//   .then(json => setData(json.album))
 
 
+// },[q])
+
+// console.log(data)
+
+// console.log(q)
   return (
     <div className='Navbar'>
       
@@ -16,7 +31,9 @@ export const Navbar = ({ activeCart }) => {
       </div>
 
       <div className="search">
-        <input type="text" name="" id="" placeholder='◉_◉   Search'/>
+        <form onSubmit={handleChange}>
+        <input type="text" value={q} id="" placeholder='◉_◉   Search' onChange={(e) =>setQ(e.target.value)}/>
+      </form>
       </div>
       
       <div className="right">
@@ -25,8 +42,11 @@ export const Navbar = ({ activeCart }) => {
           {<ShoppingCart onClick={activeCart}/>}
         </div>
         
-
+         
       </div>
+   
     </div>
+  
   )
+  
 }
