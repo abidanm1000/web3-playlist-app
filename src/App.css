@@ -434,26 +434,23 @@ h3{
   cursor: pointer;
 }
 
-.profile-stats {
-  transition: 0.5s ease;
-  text-align: center;
-  display: flex;
-  gap: 20px;
-}
-
-.stats:hover {
-  transform: translateY(-10px);
-}
-
 .profile-songs {
   padding-top: 100px;
 }
 
-/* .profile-header {
-  background-image: url("");
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
+/* .profile-stats {
+  transition: 0.5s ease;
+  text-align: center;
+  display: flex;
+  gap: 20px;
 } */
+
+/* .stats:hover {
+  transform: translateY(-10px);
+} */
+
+
+
 
 
 /* Cart CSS */
@@ -650,3 +647,12 @@ h3{
   border: #c0300c 2px solid;
   color: white;
 }
+
+/* mobile responsiveness */
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+  }

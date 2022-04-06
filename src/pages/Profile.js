@@ -29,25 +29,11 @@ export const Profile = () => {
         <Sidebar logout={logout} newAccount={newAccount} />
       </div>
 
-      <div className="profile-header">
-
-      </div>
-
       <div className="profile-info">
 
         <img id="profile-img" src={defaultProfile} alt="profile" />
 
         <h1 className="profile-name">Welcome back, <span>username!</span></h1>
-
-        <div className="profile-stats">
-          <div className="stats">
-            <h4><span>20</span> Tracks</h4>
-          </div>
-
-          <div className="stats">
-            <h4><span>2</span> Playlists</h4>
-          </div>
-        </div>
 
         <div className="profile-songs">
           <ProfileSongList />
@@ -58,6 +44,16 @@ export const Profile = () => {
     </div>
   )
 }
+
+{/* <div className="profile-stats">
+  <div className="stats">
+    <h4><span>20</span> Tracks</h4>
+  </div>
+
+  <div className="stats">
+    <h4><span>2</span> Playlists</h4>
+  </div>
+</div> */}
 
 // code for user uploading their own profile pic and storing in firebase
 
