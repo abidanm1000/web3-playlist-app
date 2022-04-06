@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import ReactPlayer from 'react-player'
 
 
 
@@ -61,7 +62,15 @@ const style = {
     color: 'white',
     
   };
+  const videoPlayer = [
+    {
+      
+      src: '/images/thriller.mp4',
+    }
+  ]
   
+  // let video = {'https://www.youtube.com/watch?v=sOnqjkJTMaA',
+  // }
 
   // console.log(covers.strAlbum3DThumb)
   return (
@@ -74,7 +83,9 @@ const style = {
     >
       <Box sx={style}>
         <Typography id="modal-modal-title " variant="h6" component="h2">
-          {/*{albumNumber.strAlbum}*/}
+        <ReactPlayer url = {videoPlayer[0].src}
+        controls
+          />
         </Typography>
         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
           {/*{albumNumber.strArtist}*/}
