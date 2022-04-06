@@ -3,7 +3,7 @@
 import { ShoppingCart } from "@material-ui/icons";
 
 
-export const Navbar = ({ activeCart, setQ, q }) => {
+export const Navbar = ({ activeCart, setQ, q, handleChange, setSongs, songs }) => {
 
 // const [data , setData ] = useState([])
 // const [q , setQ] = useState("")
@@ -31,7 +31,9 @@ export const Navbar = ({ activeCart, setQ, q }) => {
       </div>
 
       <div className="search">
+        <form onSubmit={handleChange}>
         <input type="text" value={q} id="" placeholder='◉_◉   Search' onChange={(e) =>setQ(e.target.value)}/>
+      </form>
       </div>
       
       <div className="right">

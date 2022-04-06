@@ -36,17 +36,23 @@ export const Dashboard = () => {
    //theaudiodb.com/api/v1/json/523532/mostloved.php?format=album
 
    const [data , setData ] = useState([])
-   const [q , setQ] = useState("drake")
+   const [q , setQ] = useState("")
    
-   useEffect(() => {
-     let getAlbum = async ()=>{
-
-     await fetch(`https://www.theaudiodb.com/api/v1/json/523532/searchalbum.php?s=${q}`)
-     .then(response => response.json())
-     .then(json => setData(json.album))
+     let handleChange = async (e) => { 
+       e.preventDefault()
+       
+       if(data){
+      await fetch(`https://www.theaudiodb.com/api/v1/json/523532/searchalbum.php?s=${q}`)
+          .then(response => response.json())
+          .then(json => setData(json.album))
+        }
+      setSongs([])
      }
-   getAlbum()
-   },[q])
+
+    
+     
+   
+   
    
 
 
@@ -121,6 +127,10 @@ console.log(data)
         activeCart={activeCart}
         setQ={setQ}
         q = {q}
+        handleChange = {handleChange}
+        setSongs ={setSongs}
+        songs = {songs}
+        
         /> 
 
         <Carousel 
