@@ -20,11 +20,11 @@ export const Dashboard = () => {
   const [filter, setFilter] = useState('mostloved.php?format=track')
   const [cart, setCart] = useState('')
   const [theme, setTheme] = useState('');
+  const [user, setUser] = useState({})
 
   // activates light mode when switchTheme runs on click
    let switchDarkTheme = () => !theme === '' ? setTheme('') : setTheme('lightMode');
    let switchLightTheme = () => !theme === '' ? setTheme('lightMode') : setTheme('');
-  const [user, setUser] = useState({})
 
 
 
@@ -94,11 +94,12 @@ export const Dashboard = () => {
 
   return (
     <div className='Dashboard'>
-      <div className='Sidebar'>
+      <div >
         <Sidebar logout={logout}
           newAccount={newAccount}
           switchDarkTheme = {switchDarkTheme}
           switchLightTheme = {switchLightTheme}
+          theme={theme}
         />
         
       </div>

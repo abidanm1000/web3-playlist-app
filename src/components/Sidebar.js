@@ -22,7 +22,7 @@ import Item from './Item'
 import { useState } from "react";
 
 
-export const Sidebar = ({ logout, newAccount, switchDarkTheme, switchLightTheme })=> {
+export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLightTheme })=> {
 
   const [open, setOpen] = useState(true);
 
@@ -68,7 +68,7 @@ export const Sidebar = ({ logout, newAccount, switchDarkTheme, switchLightTheme 
     setOpen(!open);
   };
   return (
-    <div className="Sidebar">
+    <div className={`Sidebar ${theme}`}>
       <motion.div
         // dataOpen={open}
         variants={sideContainerVariants}
@@ -116,7 +116,7 @@ export const Sidebar = ({ logout, newAccount, switchDarkTheme, switchLightTheme 
               boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
               backdropFilter: "blur(5.5px)",
               WebkitBackdropFilter: "blur(5.5px)",
-              border: "1px solid rgba( 255, 255, 255, 0.18 )",
+              border: "2px solid rgba( 255, 255, 255, 0.18 )",
               cursor: "pointer",
             }}
           >
@@ -136,10 +136,7 @@ export const Sidebar = ({ logout, newAccount, switchDarkTheme, switchLightTheme 
                 DASHBOARD
               </motion.h3>
   
-              <Item icon={<DashboardRounded />} name="Home" />
-              <span onClick={handleCart}> 
-              {/* <Item icon /> <img src={switchIcon} alt="" /></span> */}
-              </span>
+              
               <div onClick={()=> window.location ='/dashboard'}><Item icon={<DashboardRounded />} name="Home" /></div>
             </div>
           </div>
@@ -164,12 +161,12 @@ export const Sidebar = ({ logout, newAccount, switchDarkTheme, switchLightTheme 
             </motion.h3>
             {/* <FontAwesomeIcon icon="fa-solid fa-sun-bright" /> */}
             <div>
-              <button onClick={switchDarkTheme} >
+              <div onClick={switchDarkTheme} >
                 <Item icon={<WbSunny/>} />
-              </button>
-              <button onClick={switchLightTheme}>
+              </div>
+              <div onClick={switchLightTheme}>
                 <Item icon={<NightsStayOutlined />} />
-              </button>
+              </div>
               </div>  
           </div>
         </motion.div>

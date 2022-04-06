@@ -24,8 +24,6 @@
 }
 
 
-
-
 /* Sidebar and Navbar CSS */
 .Sidebar {
   display: flex;
@@ -59,7 +57,14 @@
   width: 14rem;
 }
 
+
 /* Light Mode CSS */
+.Sidebar.lightMode {
+  background-color: #E5E5E5;
+  color: #14213D;
+  background-image: none;
+}
+
 .Content.lightMode {
   background-color: #E5E5E5;
   color: #14213D;
@@ -78,7 +83,7 @@
 }
 
 .profile{
-  border: white solid 2px;
+  border: white solid 3px;
   display: flex;
   /* text-align: center; */
   /* align-items: center; */
@@ -87,12 +92,14 @@
   margin-bottom: 1rem;
 }
 
-.profile>img{
+.profile>img {
   width: 100%;
   /* height: auto; */
   border-radius: 50%;
   /* margin: 0 auto; */
 }
+
+
 
 .groups{
   display: flex;
@@ -100,6 +107,7 @@
   /* justify-content: center; */
   width: 100%
 }
+
 .group{
   align-items: center;
   display: flex;
@@ -412,10 +420,11 @@ h3{
 }
 
 #profile-img {
-  transition: 0.2s all;
+  transition: all 400ms ease;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 5px solid white;
   height: 200px;
+  width: 200px;
 }
 
 #profile-img:hover {
