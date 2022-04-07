@@ -3,11 +3,15 @@ import {Song} from './Song'
 import {FilterControl} from '../components/FilterControl'
 
 
-export const SongList = ({ songs, setFilter, data , profileSongs, userId}) => {
 
+export const SongList = ({ songs, setFilter, data , profileSongs, userId, songVid}) => {
+  
   const [searched, setSearched] = useState(false)
+ 
   return (
+    
     <div className="Songlist">
+      
     
       <div className='song-header' >
         <div><h1>Song List</h1></div>
@@ -29,13 +33,15 @@ export const SongList = ({ songs, setFilter, data , profileSongs, userId}) => {
        searched ? (songs.map((song, index) => <Song key={index} profileSongs={profileSongs} userId={userId} songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)) : 
        (data.map( datas => <Song albumName={datas.strAlbum} songArtists={datas.strArtist}/>))
       } */}
-      
-         {data.map( datas => <Song albumName={datas.strAlbum} songArtists={datas.strArtist}/>)}
        
-        {songs.map((song, index) => <Song key={index} profileSongs={profileSongs} userId={userId} songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}/>)} 
-      
+         {data.map( datas => <Song albumName={datas.strAlbum} songArtists={datas.strArtist}/>)}
+         
+       
+        {songs.map((song, index) => <Song key={index} profileSongs={profileSongs} userId={userId} songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}  songVid = {song.strMusicVid}/>)} 
+     
        
        </div>
+       
     </div>
     
     

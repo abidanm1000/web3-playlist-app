@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import {
-  
+
   AccountCircleRounded,
   AttachMoneyRounded,
   BarChartRounded,
@@ -14,29 +14,31 @@ import {
   TocRounded,
   OpenInNew,
   WbSunny,
- 
-  
+
+
   NightsStayOutlined,
 } from "@material-ui/icons";
 import Item from './Item'
 import { useState } from "react";
 
 
-export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLightTheme })=> {
+export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLightTheme, activate, closeSidebar }) => {
 
   const [open, setOpen] = useState(true);
 
 
-  const handleToggle = () => {
-    setOpen(!open);
-  };
 
+  const handleToggle = () => {
+  setOpen(!open);
+  }
+  
   const sideContainerVariants = {
     true: {
-      width: "15rem",
+      width: "12rem",
     },
     false: {
       transition: {
+        width: '12rem',
         delay: 0.6,
       },
     },
@@ -51,7 +53,7 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
       },
     },
   };
-// console.log(sidebarVariants)
+  // console.log(sidebarVariants)
   const profileVariants = {
     true: {
       alignSelf: "center",
@@ -68,7 +70,7 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
     setOpen(!open);
   };
   return (
-    <div className={`Sidebar ${theme}`}>
+    <div className={`Sidebar ${theme} ${activate}`}>
       <motion.div
         // dataOpen={open}
         variants={sideContainerVariants}
@@ -98,7 +100,10 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
                 duration: 0.4,
               },
             }}
-            onClick={handleToggle}
+            onClick={() => {
+              handleToggle();
+              closeSidebar();
+            }}
             className="lines_icon"
           >
             <TocRounded />
@@ -121,9 +126,9 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
             }}
           >
             <img
-              src='https://cdn.dribbble.com/users/6142/screenshots/5679189/media/1b96ad1f07feee81fa83c877a1e350ce.png?compress=1&resize=400x300&vertical=top'
+              src='/images/me1.jpg'
               alt="profile_img"
-              onClick={()=> window.location ='/profile'}
+              onClick={() => window.location = '/profile'}
             />
           </motion.div>
           {/* groups */}
@@ -135,9 +140,9 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
               >
                 DASHBOARD
               </motion.h3>
-  
-              
-              <div onClick={()=> window.location ='/dashboard'}><Item icon={<DashboardRounded />} name="Home" /></div>
+
+
+              <div onClick={() => window.location = '/dashboard'}><Item icon={<DashboardRounded />} name="Home" /></div>
             </div>
           </div>
           {/* group 2 */}
@@ -147,9 +152,9 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
             >
               ACCOUNT
             </motion.h3>
-            <div onClick={newAccount}><Item icon={<AccountCircleRounded />} name="New Account"/></div>
+            <div onClick={newAccount}><Item icon={<AccountCircleRounded />} name="New Account" /></div>
             {/* <Item icon={< ShoppingCart />} name="Checklist" />{" "} */}
-            <div onClick={logout}><Item icon={< OpenInNew />} name="Logout"/></div>
+            <div onClick={logout}><Item icon={< OpenInNew />} name="Logout" /></div>
           </div>
           {/* group 3 */}
           <div className="group">
@@ -162,17 +167,17 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
             {/* <FontAwesomeIcon icon="fa-solid fa-sun-bright" /> */}
             <div>
               <div onClick={switchDarkTheme} >
-                <Item icon={<WbSunny/>} />
+                <Item icon={<WbSunny />} />
               </div>
               <div onClick={switchLightTheme}>
                 <Item icon={<NightsStayOutlined />} />
               </div>
-              </div>  
+            </div>
           </div>
         </motion.div>
       </motion.div>
 
-      
+
     </div>
   );
 }
