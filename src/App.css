@@ -307,9 +307,10 @@ h3{
   font-size: 20px;
   height: 75px;
   font-weight: 600;
-  /* cursor: pointer; */
+  cursor: pointer;
   transition: all 250ms ease;
   border-radius: 7px;
+
   /* position: relative; */
   /* flex-direction: column; */
 }
@@ -646,7 +647,13 @@ h3{
   border: #c0300c 2px solid;
   color: white;
 }
+#video {
+  display: none;
 
+}
+#video.showVideo{
+  display: block;
+}
 /* mobile responsiveness */
 
 @media only screen 
