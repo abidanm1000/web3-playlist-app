@@ -55,44 +55,84 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    bgcolor: 'transparent',
+    bgcolor: 'white',
     
     // boxShadow: 24,
     p: 4,
     color: 'white',
     
   };
-  const videoPlayer = [
-    {
-      
-      src: '/images/thriller.mp4',
-    }
-  ]
-  
+
+  // const [source , setSource] = useState('')
+
+  //video player
+  // const videoPlayer = [
+  //   {
+  //     id:1,
+  //     src: setSource('/images/thriller.mp4'),
+  //   },
+  //   {
+  //     id:2,
+  //     src: 'images/darkside.mp4'
+  //   }
+  // ]
+
+//   useEffect(()=> {
+//     setSource('/images/thriller.mp4')
+//   }, [])
+
+// console.log(source)
+
+  // videoPlayer.forEach(video => {
+  //   for (let key in video) {
+  //     // video.[key]++;
+  //       console.log(`${key}: ${video[key]}`);
+  //   }
+  //     });
   // let video = {'https://www.youtube.com/watch?v=sOnqjkJTMaA',
   // }
 
   // console.log(covers.strAlbum3DThumb)
+
+ 
+  // console.log(video)
+
+
+
+  // const [video, setVideo] = useState(videoPlayer)
+
+// console.log(videoPlayer)
   return (
     <> 
     <Modal
       open={open}
       onClose={handleClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
-    >
+      // aria-labelledby="modal-modal-title"
+      // aria-describedby="modal-modal-description"
+      // {videoPlayer.map( video =>  id={video.id} src={video.src}/>)}
+      >
       <Box sx={style}>
-        <Typography id="modal-modal-title " variant="h6" component="h2">
-        <ReactPlayer url = {videoPlayer[0].src}
-        controls
-          />
-        </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-          {/*{albumNumber.strArtist}*/}
-          {/* {albumNumber.strGenre} */}
-        </Typography>
-      </Box>
+        <ReactPlayer 
+       url = 'https://www.theaudiodb.com/images/media/track/thumb/r14d7f1605475399.jpg'
+      controls
+    />
+    </Box>
     </Modal>
+    {/* <Modal
+      open={open}
+      onClose={handleClose}
+      // aria-labelledby="modal-modal-title"
+      // aria-describedby="modal-modal-description"
+      // {videoPlayer.map( video =>  id={video.id} src={video.src}/>)}
+      >
+      <Box sx={style}>
+        <ReactPlayer 
+       url = '/images/darkside.mp4'
+      controls
+    />
+    </Box>
+    </Modal> */}
+    
     <div className='Carousel'>
         <div className='carousel-list'>
             {covers.map((cover, index) =>  <div key={index} className='carousel-modal' onClick={()=> handleOpen(cover.idAlbum)}><CarouselItem covers = {cover.strAlbum3DThumb || defaultBackground} songName = {cover.strAlbum} songArtist = { cover.strArtist} /></div>)}
