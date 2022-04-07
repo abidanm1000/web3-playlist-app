@@ -63,7 +63,7 @@ const style = {
   };
   
 
-  // console.log(covers.strAlbum3DThumb)
+  console.log(covers)
   return (
     <> 
     <Modal
