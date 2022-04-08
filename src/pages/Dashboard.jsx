@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 // component imports
 import { Sidebar } from '../components/Sidebar'
-import { Navbar }  from '../components/Navbar'
+import { Navbar } from '../components/Navbar'
 import { SongList } from '../components/SongList'
 import { Cart } from '../components/Cart'
 import { Carousel } from '../components/Carousel'
@@ -26,6 +26,8 @@ export const Dashboard = () => {
   const {isAuthenticated} = useMoralis();
   const [data , setData ] = useState([])
   const [q , setQ] = useState("")
+  const [open, setOpen] = useState(true);
+  const [activate, setActivate] = useState('');
    
   // search function API call
   let handleChange = async (e) => { 
@@ -43,7 +45,7 @@ export const Dashboard = () => {
 
 
   // fetching API and checking authentication
-  useEffect(()=>{
+  useEffect(() => {
     // prevents user from skipping authentication
     auth.onAuthStateChanged(currentUser => {
         if(currentUser) {
@@ -65,16 +67,24 @@ export const Dashboard = () => {
     // song list function API call - works with filter control
     let getSong = async ()=>{
       await fetch(`https://theaudiodb.com/api/v1/json/523532/${filter}`)
-      .then(response => response.json())
-      .then(json => setSongs(json.loved))
+        .then(response => response.json())
+        .then(json => setSongs(json.loved))
     }
-    
+
     getSong();
 
     // clean up function makes onSnapshot stop listening for changes
     return unsub
   }, [client, filter])
   
+
+  let activateSidebar = () => !activate === '' ?  setActivate('') : setActivate('activate')
+
+  let closeSidebar = () => !activate === '' ? setActivate('activate') : setActivate('')
+
+  const handleToggle = () => {
+    setOpen(!open);
+  };
 
 
 
@@ -126,23 +136,23 @@ export const Dashboard = () => {
         switchDarkTheme = {switchDarkTheme}
         switchLightTheme = {switchLightTheme}
         theme={theme}
+        closeSidebar={closeSidebar}
         />
       </div>
 
       <div className={`Content ${theme}`}>
-        <Navbar 
-        activeCart={activeCart}
-        setQ={setQ}
-        q = {q}
-        handleChange = {handleChange}
-        setSongs ={setSongs}
-        songs = {songs}
-        
-        /> 
-
-        <Carousel 
-        songs={songs}
+        <Navbar
+          activeCart={activeCart}
+          setQ={setQ}
+          q={q}
+          handleChange={handleChange}
+          setSongs={setSongs}
+          songs={songs}
+          handleToggle={handleToggle}
+          activateSidebar={activateSidebar}
         />
+        
+        <Carousel songs={songs} />
 
         <SongList 
         songs={songs}
@@ -162,5 +172,5 @@ export const Dashboard = () => {
         />
       </div>
     </div>
-  ) 
+  )
 }

@@ -11,22 +11,24 @@ import {
   NightsStayOutlined,
 } from "@material-ui/icons";
 
-export const Sidebar = ({ theme, logoutPage, newAccount, switchDarkTheme, switchLightTheme })=> {
+export const Sidebar = ({ theme, logoutPage, newAccount, switchDarkTheme, switchLightTheme, activate, closeSidebar })=> {
 
   const { authenticate, logout } = useMoralis();
   const [open, setOpen] = useState(true);
 
 
-  const handleToggle = () => {
-    setOpen(!open);
-  };
 
+  const handleToggle = () => {
+  setOpen(!open);
+  }
+  
   const sideContainerVariants = {
     true: {
-      width: "15rem",
+      width: "12rem",
     },
     false: {
       transition: {
+        width: '12rem',
         delay: 0.6,
       },
     },
@@ -41,7 +43,6 @@ export const Sidebar = ({ theme, logoutPage, newAccount, switchDarkTheme, switch
       },
     },
   };
-
   const profileVariants = {
     true: {
       alignSelf: "center",
@@ -55,7 +56,7 @@ export const Sidebar = ({ theme, logoutPage, newAccount, switchDarkTheme, switch
   };
 
   return (
-    <div className={`Sidebar ${theme}`}>
+    <div className={`Sidebar ${theme} ${activate}`}>
       <motion.div
         // dataOpen={open}
         variants={sideContainerVariants}
@@ -85,7 +86,10 @@ export const Sidebar = ({ theme, logoutPage, newAccount, switchDarkTheme, switch
                 duration: 0.4,
               },
             }}
-            onClick={handleToggle}
+            onClick={() => {
+              handleToggle();
+              closeSidebar();
+            }}
             className="lines_icon"
           >
             <TocRounded />
@@ -110,7 +114,9 @@ export const Sidebar = ({ theme, logoutPage, newAccount, switchDarkTheme, switch
             <img
               src='/images/me1.jpg'
               alt="profile_img"
-              onClick={authenticate}
+              onClick={() => {
+                authenticate();
+                window.location = '/profile'}}
             />
           </motion.div>
           {/* groups */}
@@ -137,7 +143,7 @@ export const Sidebar = ({ theme, logoutPage, newAccount, switchDarkTheme, switch
             >
               Account
             </motion.h3>
-            <div onClick={newAccount}><Item icon={<AccountCircleRounded />} name="New Account"/></div>
+            <div onClick={newAccount}><Item icon={<AccountCircleRounded />} name="New Account" /></div>
             {/* <Item icon={< ShoppingCart />} name="Checklist" />{" "} */}
             <div onClick={()=>{
               logoutPage();
@@ -155,17 +161,17 @@ export const Sidebar = ({ theme, logoutPage, newAccount, switchDarkTheme, switch
             {/* <FontAwesomeIcon icon="fa-solid fa-sun-bright" /> */}
             <div>
               <div onClick={switchDarkTheme} >
-                <Item icon={<WbSunny/>} />
+                <Item icon={<WbSunny />} />
               </div>
               <div onClick={switchLightTheme}>
                 <Item icon={<NightsStayOutlined />} />
               </div>
-              </div>  
+            </div>
           </div>
         </motion.div>
       </motion.div>
 
-      
+
     </div>
   );
 }

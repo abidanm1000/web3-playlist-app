@@ -5,7 +5,7 @@
     height: 400px;
     display: flex;
     justify-content: flex-start;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* overflow: hidden; */
 }
 
@@ -76,3 +76,104 @@
     color: #07f8a8d2;
     cursor: pointer;
 }
+
+/* mobile response  */
+@media (max-width: 2000px) {
+
+    .Carousel {
+        width: 1000px;
+    }
+
+    .Carousel-Item {
+        height: 250px;
+        width: 250px;
+    }
+
+    .detail-container {
+        height: 50px;
+        width: 100%;
+    }
+
+    .play-icon {
+        height: 15px;
+    }
+
+    .artist {
+        font-size: 8px;
+    }
+
+    .item-price {
+        font-size: 10px;
+    }
+
+    .carousel-list {
+        font-size: 10px;
+    }
+}
+@media (max-width: 900px) {
+
+    .Carousel {
+        width: 500px;
+    }
+
+    .Carousel-Item {
+        height: 150px;
+        width: 150px;
+    }
+
+    .detail-container {
+        height: 50px;
+        width: 100%;
+    }
+
+    .play-icon {
+        height: 15px;
+    }
+
+    .artist {
+        font-size: 8px;
+    }
+
+    .item-price {
+        font-size: 10px;
+    }
+
+    .carousel-list {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 610px) {
+
+    .Carousel {
+        width: 300px;
+    }
+
+    .Carousel-Item {
+        height: 150px;
+        width: 150px;
+    }
+
+    .detail-container {
+        height: 50px;
+        width: 100%;
+    }
+
+    .play-icon {
+        height: 15px;
+    }
+
+    .artist {
+        font-size: 8px;
+    }
+
+    .item-price {
+        font-size: 10px;
+    }
+
+    .carousel-list {
+        font-size: 10px;
+    }
+}
+
+
