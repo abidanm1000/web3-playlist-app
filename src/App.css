@@ -801,6 +801,9 @@ h3 {
   .cart-list {
     width: 400px;
   }
+  .cart.show{
+    transform: translateX(-700);
+  }
 }
 @media (max-height: 700px){
   .search form {
