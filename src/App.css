@@ -966,10 +966,10 @@ h3 {
   }
   
   .cart-list {
-    width: 400px;
+    width:380px;
   }
   .cart.show{
-    transform: translateX(-418px);
+    transform: translateX(-385px);
   }
 }
 @media (max-height: 700px){
