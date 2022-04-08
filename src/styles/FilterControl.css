@@ -66,4 +66,14 @@
       width: 50px;
       height: 40px;
     }
+    .dropdown-content {
+   
+    min-width: 60px;
+  }
+  .dropdown-content p {
+    color: black;
+    padding: 10px 7px;
+    font-size: 13px;
+   
+  }
   }
