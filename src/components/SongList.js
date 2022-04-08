@@ -1,12 +1,12 @@
-import React, { useState} from 'react'
+import React from 'react'
 import {Song} from './Song'
 import {FilterControl} from '../components/FilterControl'
 
 
 
-export const SongList = ({ songs, setFilter, data , profileSongs, userId, songVid}) => {
+export const SongList = ({ songs, setFilter, data , profileSongs, userId, songVid, showPlayer, setVidSource}) => {
   
-  const [searched, setSearched] = useState(false)
+  // const [searched, setSearched] = useState(false)
  
   return (
     
@@ -37,7 +37,7 @@ export const SongList = ({ songs, setFilter, data , profileSongs, userId, songVi
          {data.map( datas => <Song albumName={datas.strAlbum} songArtists={datas.strArtist}/>)}
          
        
-        {songs.map((song, index) => <Song key={index} profileSongs={profileSongs} userId={userId} songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}  songVid = {song.strMusicVid}/>)} 
+        {songs.map((song, index) => <Song key={index} profileSongs={profileSongs} userId={userId} songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}  songVid = {song.strMusicVid} showPlayer = {showPlayer} setVidSource = {setVidSource}/>)} 
      
        
        </div>

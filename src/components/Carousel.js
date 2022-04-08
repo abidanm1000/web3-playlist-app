@@ -104,20 +104,7 @@ const style = {
 // console.log(videoPlayer)
   return (
     <> 
-    <Modal
-      open={open}
-      onClose={handleClose}
-      // aria-labelledby="modal-modal-title"
-      // aria-describedby="modal-modal-description"
-      // {videoPlayer.map( video =>  id={video.id} src={video.src}/>)}
-      >
-      <Box sx={style}>
-        <ReactPlayer 
-       url = 'https://www.theaudiodb.com/images/media/track/thumb/r14d7f1605475399.jpg'
-      controls
-    />
-    </Box>
-    </Modal>
+  
     {/* <Modal
       open={open}
       onClose={handleClose}

@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { setDoc, doc } from 'firebase/firestore'
 import db from '../utils/firebase'
-import ReactPlayer from 'react-player'
+// import ReactPlayer from 'react-player'
 
-export const Song = ({ songTrack, songArtist, songGenre, userId, profileSongs, albumName, songArtists, songVid }) => {
+export const Song = ({ songTrack, songArtist, songGenre, userId, profileSongs, albumName, songArtists, songVid, showPlayer, setVidSource }) => {
 
   const ethPrice = 0.000280
 
@@ -40,16 +40,27 @@ export const Song = ({ songTrack, songArtist, songGenre, userId, profileSongs, a
     setDoc(doc(db, 'users', userId), payload)
   }
 
-  const [showVideo, setShowVideo] = useState('')
+  // const [showVideo, setShowVideo] = useState('')
 
 
-  const handleVideo = () => !showVideo ? setShowVideo('showVideo') : setShowVideo('')
+  // const handleVideo = () => !showVideo ? setShowVideo('showVideo') : setShowVideo('')
+
+  // const divStyle = {
+  //   display: 'flex',
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   border: 'solid 5px white'
+  // };
+
    
       
   return (
-    <div className='Song' onClick={handleVideo}>
+    <div className='Song' onClick={()=>{
+        showPlayer();
+        setVidSource(songVid);
+      }}>
       <div className='song-info'>
-        <p className= {showVideo} id='video'><ReactPlayer url = {songVid} controls /></p>
+        
         <p>{songTrack || albumName}</p>
         <p className='artist'>{songArtist || songArtists}</p>
       </div>

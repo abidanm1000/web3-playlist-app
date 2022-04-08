@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Sidebar } from '../components/Sidebar'
 import { Song } from '../components/Song'
 import { useMoralis } from "react-moralis";
@@ -44,34 +44,3 @@ export const Profile = ({logoutPage, newAccount, theme, switchDarkTheme, switchL
     </div>
   )
 }
-
-{/* <div className="profile-stats">
-  <div className="stats">
-    <h4><span>20</span> Tracks</h4>
-  </div>
-
-  <div className="stats">
-    <h4><span>2</span> Playlists</h4>
-  </div>
-</div> */}
-
-// code for user uploading their own profile pic and storing in firebase
-
-// const [profileImg, setProfileImg] = useState(null)
-
-// const imgSelectHandler = (e) => {
-//   setProfileImg(e.target.files[0])
-// }
-
-// const imgUploadHandler = () => {
-//   const fd = new FormData();
-//   fd.append('image', profileImg, profileImg.name)
-//   axios.post('gs://music-marketplace-a0438.appspot.com', fd)
-//   .then(res => {
-//     console.log(res)
-//   })
-// }
-
-/* <input type="file" onChange={imgSelectHandler} /> */
-/* <button onClick={imgUploadHandler}>Upload</button> */
-

@@ -30,10 +30,7 @@
   overflow: hidden;
   position: relative;
   /* padding: 10px; */
-  
-  
 }
-
 
 /* Sidebar and Navbar CSS */
 .Sidebar {
@@ -153,6 +150,10 @@ h3 {
   padding-left: 130px;
   padding-right: 130px;
   flex: 1;
+}
+
+.Content.showPlayer {
+  /* filter: blur(4px); */
 }
 
 .Navbar {
@@ -680,13 +681,62 @@ h3 {
   border: #c0300c 2px solid;
   color: white;
 }
-#video {
+
+/* #video {
   display: none;
 
 }
 #video.showVideo{
   display: block;
+} */
+
+
+
+/* video player css */
+
+.player{
+  overflow: hidden;
+  border-radius: 40px;
+  box-shadow: gray 0px 0px 10px 10px;
+  border: solid 2px rgb(7, 7, 7);
+  position: absolute;
+  top: 180px;
+  display: none;
+  /* justify-content: center;
+  align-items: center; */
+  /* z-index: 3; */
+  height: 425px;
+  width: 690px;
+  background-color: black;
 }
+
+.player.showPlayer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-container {
+  border-radius: 30px;
+  overflow: hidden;
+
+  
+}
+
+.exit-player {
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: rgba(209, 8, 8, 0.749);
+  /* border: 1px white solid; */
+  /* text-align: right; */
+  position: absolute;
+  top: 0;
+  right: 10;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
 /* mobile responsiveness */
 
 @media (max-width: 900px) {

@@ -10,9 +10,9 @@ import { onSnapshot, doc } from 'firebase/firestore'
 import db from '../utils/firebase'
 import { auth } from '../utils/firebase'
 import { signOut } from 'firebase/auth'
-import { ProfileSongList } from '../components/ProfileSongList'
 import { Profile } from './Profile'
 import { useMoralis } from 'react-moralis'
+import ReactPlayer from 'react-player'
 
 
 export const Dashboard = () => {
@@ -28,7 +28,8 @@ export const Dashboard = () => {
   const [q , setQ] = useState("")
   const [open, setOpen] = useState(true);
   const [activate, setActivate] = useState('');
-   
+  const [video,setVideo] = useState('')
+  const [vidSource, setVidSource]  = useState('');
   // search function API call
   let handleChange = async (e) => { 
     e.preventDefault()
@@ -86,6 +87,9 @@ export const Dashboard = () => {
     setOpen(!open);
   };
 
+ //video player
+ let showPlayer = () => !video === '' ? setVideo('') : setVideo('showPlayer')
+ let closePlayer = () => video === '' ? setVideo('showPlayer') : setVideo('')
 
 
   // activates light mode when switchTheme runs on click
@@ -140,7 +144,7 @@ export const Dashboard = () => {
         />
       </div>
 
-      <div className={`Content ${theme}`}>
+      <div className={`Content ${theme} ${video}`}>
         <Navbar
           activeCart={activeCart}
           setQ={setQ}
@@ -153,6 +157,12 @@ export const Dashboard = () => {
         />
         
         <Carousel songs={songs} />
+        
+        {/* video player container*/}
+        <div className={`player ${video}`}>
+          <p className='exit-player' onClick={closePlayer}>X</p>
+          <div className='player-container'><ReactPlayer url = {vidSource} controls /></div>
+        </div>
 
         <SongList 
         songs={songs}
@@ -160,6 +170,8 @@ export const Dashboard = () => {
         data = {data}
         profileSongs={profileSongs}
         userId={client}
+        showPlayer={showPlayer}
+        setVidSource = {setVidSource}
         />
       </div>
 
