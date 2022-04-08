@@ -119,6 +119,7 @@ export const Dashboard = () => {
 
  // metamask/moralis auth returning profile
    if (isAuthenticated) {
+     let savedSongs = profileSongs;
      return (
        <Profile 
        logoutPage={logoutPage} 
@@ -127,6 +128,7 @@ export const Dashboard = () => {
        switchDarkTheme={switchDarkTheme} 
        switchLightTheme={switchLightTheme}
        profileSongs={profileSongs}
+       savedSongs={savedSongs}
        />
      );
    }

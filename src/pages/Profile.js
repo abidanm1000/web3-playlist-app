@@ -13,8 +13,6 @@ export const Profile = ({logoutPage, newAccount, theme, switchDarkTheme, switchL
 
   let defaultProfile = "/images/me1.jpg"
 
-  console.log(savedSongs)
-
   return (
     <div className={`profile-content ${theme}`}>
 
@@ -37,18 +35,17 @@ export const Profile = ({logoutPage, newAccount, theme, switchDarkTheme, switchL
 
         <div className="profile-songs">
 
-        <div className='profile-songs-container'>
-          <div className="profile-songs-header">
-            <div id='saved-song-title'>Title</div>
-            <div id='saved-genre-title'>Genre</div>
-          </div>
+          <div className='profile-songs-container'>
+            <div className="profile-songs-header">
+              <div id='saved-song-title'>Title</div>
+              <div id='saved-genre-title'>Genre</div>
+            </div>
 
-          <div className="saved-song-list">
-            {savedSongs.map((song, index) => <SavedSong key={index} track={song.track} artist={song.artist} genre={song.genre} />)}
+            <div className="saved-song-list">
+              {savedSongs.map((song, index) => <SavedSong key={index} track={song.track} artist={song.artist} genre={song.genre} />)}
+            </div>
           </div>
-        </div>
-
-  {/*{savedSongs.map((song, index) => <Song key={index} profileSongs={profileSongs} songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}  songVid = {song.strMusicVid}/>)}*/}
+          
         </div>
 
       </div>
