@@ -969,7 +969,7 @@ h3 {
     width:380px;
   }
   .cart.show{
-    transform: translateX(-385px);
+    transform: translateX(-380px);
   }
 }
 @media (max-height: 700px){
