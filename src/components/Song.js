@@ -5,7 +5,6 @@ import db from '../utils/firebase'
 import ReactPlayer from 'react-player'
 
 export const Song = ({ songTrack, songArtist, songGenre, userId, profileSongs, albumName, songArtists, songVid }) => {
-  console.log(songVid)
 
   const ethPrice = 0.000280
 

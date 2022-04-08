@@ -1,5 +1,5 @@
 import './App.css';
-import {  Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 // page imports
 import { Dashboard } from './pages/Dashboard'
@@ -20,18 +20,16 @@ function App() {
   library.add(fab, faFire, faArrowLeft, faCirclePlay, faArrowDownWideShort)
   
   return (
-  
+    <BrowserRouter>
       <div className="App">
         <Routes>
           <Route path='/dashboard' element={<Dashboard />}/> 
           <Route path="/signup" element={<SignUp />}/>
           <Route path="/" element={<SignIn />}/>
-          <Route path="/profile" element={<Profile />}/>
           <Route path="/carousel-item/:id" element={<CarouselItem />}/>
-
         </Routes>
       </div>
- 
+    </BrowserRouter>
   );
 }
 

@@ -14,18 +14,6 @@ export const Navbar = ({ activeCart, setQ, q, handleChange, setSongs, songs, han
 // const [data , setData ] = useState([])
 // const [q , setQ] = useState("")
 
-// useEffect(() => {
-  
-//   fetch(`https://www.theaudiodb.com/api/v1/json/523532/searchalbum.php?s=${q}`)
-//   .then((response)=> response.json())
-//   .then(json => setData(json.album))
-
-
-// },[q])
-
-// console.log(data)
-
-// console.log(q)
   return (
     <div className='Navbar'>
 
