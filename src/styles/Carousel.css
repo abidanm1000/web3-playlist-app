@@ -2,7 +2,7 @@
     margin-top: 20px;
     /* border: 3px solid lightcoral; */
     width: 100%;
-    height: 400px;
+    height: 325px;
     display: flex;
     justify-content: flex-start;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -86,6 +86,9 @@
 }
 
 /* mobile response  */
+
+
+
 @media (max-width: 2000px) {
 
     .Carousel {
@@ -118,6 +121,38 @@
         font-size: 10px;
     }
 }
+
+@media only screen and (max-width: 2000px) and (max-height: 800px) {
+    .Carousel {
+        /* border: #a745b4 2px solid; */
+        width: 900px;
+        margin-top: 0;
+    }
+
+    .Carousel-Item {
+        height: 150px;
+        width: 150px;
+    }
+
+    .item-details, .artist {
+        font-size: 0.7rem;
+    }
+
+    .Navbar {
+        margin: 25px 0px;
+    }
+    .player {
+        top: 70px;
+        height: 300px;
+        width: 400px;
+    }
+
+    .player-container{
+        height: 250px;
+        width: 350px;
+    }
+}
+
 @media (max-width: 900px) {
 
     .Carousel {

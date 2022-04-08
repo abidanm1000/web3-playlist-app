@@ -4,9 +4,9 @@ import { setDoc, doc } from 'firebase/firestore'
 import db from '../utils/firebase'
 // import ReactPlayer from 'react-player'
 
-export const Song = ({ songTrack, songArtist, songGenre, userId, profileSongs, albumName, songArtists, songVid, showPlayer, setVidSource }) => {
+export const Song = ({ counter, setCounter, total, setTotal, songTrack, songArtist, songGenre, userId, profileSongs, albumName, songArtists, songVid, showPlayer, setVidSource }) => {
 
-  const ethPrice = 0.000280
+  const ethPrice = 0.280;
 
   // generating IDs for added songs
   const generateId = array => {
@@ -38,27 +38,18 @@ export const Song = ({ songTrack, songArtist, songGenre, userId, profileSongs, a
     }
 
     setDoc(doc(db, 'users', userId), payload)
+    setTotal(total + ethPrice);
+    setCounter(counter + 1)
   }
-
-  // const [showVideo, setShowVideo] = useState('')
-
-
-  // const handleVideo = () => !showVideo ? setShowVideo('showVideo') : setShowVideo('')
-
-  // const divStyle = {
-  //   display: 'flex',
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  //   border: 'solid 5px white'
-  // };
 
    
       
   return (
-    <div className='Song' onClick={()=>{
+    <div className='Song' >
+      <FontAwesomeIcon icon="fa-solid fa-circle-play" className='play-button' onClick={()=>{
         showPlayer();
         setVidSource(songVid);
-      }}>
+      }}/>
       <div className='song-info'>
         
         <p>{songTrack || albumName}</p>

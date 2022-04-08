@@ -3,7 +3,7 @@ import { setDoc, doc } from 'firebase/firestore'
 import db from '../utils/firebase'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
-export const CartItem = ({ userId, profileSongs, song, songTrack, songArtist, songPrice }) => {
+export const CartItem = ({ total, setTotal, ethPrice, userId, profileSongs, song, songTrack, songArtist, songPrice, counter, setCounter }) => {
   // console.log(profileSongs)
   // removing individual song
   const removeSong = () => {
@@ -15,6 +15,8 @@ export const CartItem = ({ userId, profileSongs, song, songTrack, songArtist, so
         songs: newSongs
     }
     setDoc(doc(db, 'users', userId), payload)
+    setTotal(total - ethPrice);
+    setCounter(counter - 1);
   }
   
   return (

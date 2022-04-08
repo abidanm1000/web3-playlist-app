@@ -7,20 +7,11 @@
   box-sizing: border-box;
 }
 
-.App {
-  
-  overflow-x: hidden;
-  overflow-y: hidden;
-  
-}
-
 /* Dashboard CSS */
 .Dashboard {
-  /* object-fit: cover; */
-  /* border: 3px hotpink solid; */
-  text-align: center;
-  width: 100vw;
   height: 100vh;
+  width: 100%;
+  text-align: center;
   background-image: linear-gradient(to top, #0E324A, #0D2237, #3B243E);
   display: flex;
   align-items: center;
@@ -29,7 +20,6 @@
   font-family: 'Lobster', cursive;
   overflow: hidden;
   position: relative;
-  /* padding: 10px; */
 }
 
 /* Sidebar and Navbar CSS */
@@ -38,6 +28,7 @@
   font-family: 'Lobster', cursive;
   color: white;
   background-image: linear-gradient(to top, #0E324A, #0D2237, #3B243E);
+  z-index: 100;
 }
 
 .sidebar_container {
@@ -63,6 +54,7 @@
   justify-content: flex-start;
   height: 100vh;
   width: 14rem;
+  z-index: 7;
 }
 
 
@@ -167,6 +159,12 @@ h3 {
 .Navbar div {
   display: flex;
   align-items: center;
+}
+
+.navbar-button {
+  height: 40px;
+  width: 40px;
+  display: none;
 }
 
 .left {
@@ -324,7 +322,6 @@ h3 {
   font-size: 20px;
   height: 75px;
   font-weight: 600;
-  cursor: pointer;
   transition: all 250ms ease;
   border-radius: 7px;
 
@@ -336,6 +333,13 @@ h3 {
   transform: translateY(-4px);
   /* box-shadow: 0 0 7px 0 hsl(240, 25%, 2%); */
   background-color: rgba(133, 131, 131, 0.274);
+}
+
+.play-button {
+  /* border:  3px rgb(123, 255, 105) solid; */
+  align-self: center;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 .song-info {
@@ -651,6 +655,7 @@ h3 {
 
 .cart-info {
   /* border: white 1px solid; */
+  font-size: 16px;
   padding: 10px;
   height: 100%;
   width: 100%;
@@ -798,39 +803,74 @@ h3 {
   height: 425px;
   width: 690px;
   background-color: black;
-}
-
-.player.showPlayer{
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.player.showPlayer{
+  display: flex;
+}
+
 .player-container {
   border-radius: 30px;
-  overflow: hidden;
-
-  
+  overflow: hidden;  
 }
 
 .exit-player {
+  width: 40px;
   cursor: pointer;
   border-radius: 50%;
   padding: 10px;
-  background-color: rgba(209, 8, 8, 0.749);
-  /* border: 1px white solid; */
-  /* text-align: right; */
+  background-color: rgba(142, 140, 140, 0.749);
   position: absolute;
   top: 0;
   right: 10;
   font-size: 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all ease 300ms;
 }
 
+.exit-player:hover {
+  background-color: rgba(209, 8, 8, 0.749);
+}
+
+@media only screen and (max-width: 1620px) {
+  .profile-info {
+    padding-right: 150px;
+  }
+}
+
+
+@media only screen and (max-width: 1300px) {
+  
+}
+
+
 /* mobile responsiveness */
+@media (max-width: 1025px) {
+  .profile-info {
+    padding-right: 100px;
+  }
+
+  .Content {
+    padding: 0
+  }
+}
 
 @media (max-width: 900px) {
+  .navbar-button {
+    display: block;
+  }
 
+  .profile-info {
+    padding-right: 0px;
+
+  }
+
+  .profile-songs {
+    /* padding-top: 100px; */
+    padding: 0px;
+  }
 
   .Content {
     padding: 0
@@ -852,7 +892,7 @@ h3 {
 
   .sidebar_container {
     /* display: none; */
-    width: 5px;
+    width: 1rem;
   }
 
   .song-button {
@@ -971,10 +1011,46 @@ h3 {
   .cart.show{
     transform: translateX(-418px);
   }
+  
+
+  .profile-songs-container {
+    width: 100rem;
+  }
+
+  .saved-song-list {
+    width: 25rem;
+  }
+
+  .saved-song {
+    font-size: 16px;
+  }
 }
 @media (max-height: 700px){
   .search form {
     width: 100%;
     height: 60px;
+  }
+}
+
+@media only screen and (max-width: 300px){
+  .profile-songs {
+    padding: 0;
+  }
+
+  .profile-songs-container {
+    
+    width: 100rem;
+    height: 80rem;
+  }
+  
+  .saved-song-list {
+    
+    width: 17rem;
+    height: 80rem;
+  }
+  
+  .saved-song {
+    /* border: #c0300c 4px solid; */
+    font-size: 13px;
   }
 }

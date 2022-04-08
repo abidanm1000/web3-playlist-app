@@ -16,7 +16,8 @@ import ReactPlayer from 'react-player'
 
 
 export const Dashboard = () => {
-
+  const [counter, setCounter] = useState(0);
+  const [total, setTotal] = useState(0);
   const [songs, setSongs] = useState([])
   const [profileSongs, setProfileSongs] = useState(songs)
   const [filter, setFilter] = useState('mostloved.php?format=track')
@@ -30,6 +31,9 @@ export const Dashboard = () => {
   const [activate, setActivate] = useState('');
   const [video,setVideo] = useState('')
   const [vidSource, setVidSource]  = useState('');
+
+  const ethPrice = 0.280;
+
   // search function API call
   let handleChange = async (e) => { 
     e.preventDefault()
@@ -80,7 +84,6 @@ export const Dashboard = () => {
   
 
   let activateSidebar = () => !activate === '' ?  setActivate('') : setActivate('activate')
-
   let closeSidebar = () => !activate === '' ? setActivate('activate') : setActivate('')
 
   const handleToggle = () => {
@@ -143,6 +146,8 @@ export const Dashboard = () => {
         switchLightTheme = {switchLightTheme}
         theme={theme}
         closeSidebar={closeSidebar}
+        handleToggle={handleToggle}
+        activate={activate}
         />
       </div>
 
@@ -156,6 +161,7 @@ export const Dashboard = () => {
           songs={songs}
           handleToggle={handleToggle}
           activateSidebar={activateSidebar}
+          counter={counter}
         />
         
         <Carousel songs={songs} />
@@ -163,7 +169,7 @@ export const Dashboard = () => {
         {/* video player container*/}
         <div className={`player ${video}`}>
           <p className='exit-player' onClick={closePlayer}>X</p>
-          <div className='player-container'><ReactPlayer url = {vidSource} controls /></div>
+          <div className='player-container'><ReactPlayer url = {vidSource} controls className="react__player"/></div>
         </div>
 
         <SongList 
@@ -174,6 +180,10 @@ export const Dashboard = () => {
         userId={client}
         showPlayer={showPlayer}
         setVidSource = {setVidSource}
+        setTotal={setTotal}
+        total={total}
+        counter={counter}
+        setCounter={setCounter}
         />
       </div>
 
@@ -183,6 +193,11 @@ export const Dashboard = () => {
         hideCart={hideCart} 
         userId={client} 
         profileSongs={profileSongs}
+        total={total}
+        setTotal={setTotal}
+        ethPrice={ethPrice}
+        counter={counter}
+        setCounter={setCounter}
         />
       </div>
     </div>

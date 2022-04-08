@@ -1,28 +1,20 @@
-
-// import React, {useEffect, useState} from 'react'
+import React from 'react'
 import { ShoppingCart } from "@material-ui/icons";
 import { motion } from "framer-motion";
 import {TocRounded} from "@material-ui/icons";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 
-export const Navbar = ({ activeCart, setQ, q, handleChange, setSongs, songs, handleToggle, activateSidebar }) => {
-
-  // const sidebarActions = () => {
-  //   handleToggle()
-  //   activateSidebar()
-  // }
-// const [data , setData ] = useState([])
-// const [q , setQ] = useState("")
+export const Navbar = ({ counter, activeCart, setQ, q, handleChange, setSongs, songs, handleToggle, activateSidebar }) => {
 
   return (
     <div className='Navbar'>
-
-      <motion.div >
-        <TocRounded onClick={()=> {
-          handleToggle();
-          activateSidebar();
-        }} />
-      </motion.div>
+      <div onClick={()=> {
+        handleToggle();
+        activateSidebar();
+      }}>
+        <FontAwesomeIcon icon="fa-solid fa-fire" className="navbar-button"/>
+      </div>
       
       <div className="left" >
         <div>
@@ -41,6 +33,7 @@ export const Navbar = ({ activeCart, setQ, q, handleChange, setSongs, songs, han
       
         <div className="profilee">
           {<ShoppingCart onClick={activeCart}/>}
+          <div>{counter}</div>
         </div>
         
          
