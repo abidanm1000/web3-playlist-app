@@ -19,6 +19,7 @@ export const Dashboard = () => {
 
   const [songs, setSongs] = useState([])
   const [profileSongs, setProfileSongs] = useState(songs)
+  // const [savedSongs, setSavedSongs] = useState(profileSongs)
   const [filter, setFilter] = useState('mostloved.php?format=track')
   const [cart, setCart] = useState('')
   const [theme, setTheme] = useState('');
@@ -29,6 +30,8 @@ export const Dashboard = () => {
   const [open, setOpen] = useState(true);
   const [activate, setActivate] = useState('');
    
+  // console.log(profileSongs)
+  // console.log(savedSongs)
   // search function API call
   let handleChange = async (e) => { 
     e.preventDefault()
@@ -114,18 +117,25 @@ export const Dashboard = () => {
   }
 
  // metamask/moralis auth returning profile
-   if (isAuthenticated) {
-     return (
-       <Profile 
-       logoutPage={logoutPage} 
-       newAccount={newAccount} 
-       theme={theme} 
-       switchDarkTheme={switchDarkTheme} 
-       switchLightTheme={switchLightTheme}
-       profileSongs={profileSongs}
-       />
-     );
-   }
+//  useEffect(()=> {
+   
+//  }, [profileSongs])
+
+if (isAuthenticated) {
+  let savedSongs = profileSongs;
+  // console.log(savedSongs)
+  return (
+    <Profile 
+    logoutPage={logoutPage} 
+    newAccount={newAccount} 
+    theme={theme} 
+    switchDarkTheme={switchDarkTheme} 
+    switchLightTheme={switchLightTheme}
+    profileSongs={profileSongs}
+    savedSongs={savedSongs}
+    />
+  );
+}
   
   return (
     <div className='Dashboard'>

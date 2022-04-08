@@ -3,18 +3,11 @@ import { CartItem } from './CartItem'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import MetaLogo from '../images/metamask-logo.png'
 import { useMoralis } from "react-moralis";
-import { isCursorAtEnd, isFocusable } from '@testing-library/user-event/dist/utils';
+// import { isCursorAtEnd, isFocusable } from '@testing-library/user-event/dist/utils';
 
 export const Cart = ({ showCart, hideCart, userId, profileSongs }) => {
 
-    const { authenticate, user } = useMoralis();
-
-    const savedSongs = profileSongs;
-
-    // if(user) {
-    //     user.set('saved-songs', [savedSongs])
-    //     user.save();
-    // }
+    const { authenticate } = useMoralis();
 
     
   return (
