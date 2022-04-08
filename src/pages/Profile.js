@@ -1,42 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Sidebar } from '../components/Sidebar'
-import { ProfileSongList } from '../components/ProfileSongList'
-import { auth } from '../utils/firebase'
-import { signOut } from 'firebase/auth'
-
-export const Profile = () => {
-
-  let defaultProfile = "https://cdn.dribbble.com/users/6142/screenshots/5679189/media/1b96ad1f07feee81fa83c877a1e350ce.png?compress=1&resize=400x300&vertical=top"
+import { Song } from '../components/Song'
+import { useMoralis } from "react-moralis";
 
 
-  // logout function passed to sidebar
-  const logout = async () => {
-    await signOut(auth)
-    window.location = '/'
-  }
+export const Profile = ({logoutPage, newAccount, theme, switchDarkTheme, switchLightTheme, profileSongs}) => {
 
-  // new Account function passed to side bar
-  const newAccount = async () => {
-    await signOut(auth)
-    window.location = '/signup'
-  }
+  const { user } = useMoralis();
+
+  const account = user.get('ethAddress');
+  let formatAccount = account.slice(0,4) + '...' + account.slice(-4);
+
+  let defaultProfile = "/images/me1.jpg"
+
 
 
   return (
-    <div className="profile-content">
+    <div className={`profile-content ${theme}`}>
 
       <div className='profile-sidebar'>
-        <Sidebar logout={logout} newAccount={newAccount} />
+        <Sidebar 
+        logoutPage={logoutPage} 
+        newAccount={newAccount} 
+        switchDarkTheme={switchDarkTheme}
+        switchLightTheme={switchLightTheme}
+        theme={theme}
+        />
       </div>
 
-      <div className="profile-info">
+      <div className={`profile-info ${theme}`}>
 
         <img id="profile-img" src={defaultProfile} alt="profile" />
 
-        <h1 className="profile-name">Welcome back, <span>username!</span></h1>
+        <h1 className="profile-name">Welcome back</h1>
+        <span className={`profile-account ${theme}`}>{formatAccount}</span>
 
         <div className="profile-songs">
-          <ProfileSongList />
+          {profileSongs.map((song, index) => <Song key={index} profileSongs={profileSongs} songTrack={song.strTrack || song.strAlbum} songArtist={song.strArtist} songGenre = {song.strGenre}  songVid = {song.strMusicVid}/>)}
         </div>
 
       </div>

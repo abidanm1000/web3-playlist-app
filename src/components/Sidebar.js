@@ -1,29 +1,19 @@
-
+import { useState } from "react";
+import { useMoralis } from "react-moralis";
 import { motion } from "framer-motion";
+import Item from './Item'
 import {
-  
   AccountCircleRounded,
-  AttachMoneyRounded,
-  BarChartRounded,
   DashboardRounded,
-  ShoppingCart,
-  LocalGasStationRounded,
-  SignalWifi2BarLockRounded,
-  SettingsRemoteRounded,
-  ColorLensRounded,
   TocRounded,
   OpenInNew,
   WbSunny,
- 
-  
   NightsStayOutlined,
 } from "@material-ui/icons";
-import Item from './Item'
-import { useState } from "react";
 
+export const Sidebar = ({ theme, logoutPage, newAccount, switchDarkTheme, switchLightTheme })=> {
 
-export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLightTheme })=> {
-
+  const { authenticate, logout } = useMoralis();
   const [open, setOpen] = useState(true);
 
 
@@ -51,7 +41,7 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
       },
     },
   };
-// console.log(sidebarVariants)
+
   const profileVariants = {
     true: {
       alignSelf: "center",
@@ -64,9 +54,6 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
     },
   };
 
-  const handleCart = () => {
-    setOpen(!open);
-  };
   return (
     <div className={`Sidebar ${theme}`}>
       <motion.div
@@ -123,7 +110,7 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
             <img
               src='/images/me1.jpg'
               alt="profile_img"
-              onClick={()=> window.location ='/profile'}
+              onClick={authenticate}
             />
           </motion.div>
           {/* groups */}
@@ -133,11 +120,14 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
               <motion.h3
                 animate={{ opacity: open ? 1 : 0, height: open ? "auto" : 0 }}
               >
-                DASHBOARD
+                Dashboard
               </motion.h3>
   
               
-              <div onClick={()=> window.location ='/dashboard'}><Item icon={<DashboardRounded />} name="Home" /></div>
+              <div onClick={()=>{ 
+                logout();
+                window.location ='/dashboard'
+              }}><Item icon={<DashboardRounded />} name="Home" /></div>
             </div>
           </div>
           {/* group 2 */}
@@ -145,11 +135,14 @@ export const Sidebar = ({ theme, logout, newAccount, switchDarkTheme, switchLigh
             <motion.h3
               animate={{ opacity: open ? 1 : 0, height: open ? "auto" : 0 }}
             >
-              ACCOUNT
+              Account
             </motion.h3>
             <div onClick={newAccount}><Item icon={<AccountCircleRounded />} name="New Account"/></div>
             {/* <Item icon={< ShoppingCart />} name="Checklist" />{" "} */}
-            <div onClick={logout}><Item icon={< OpenInNew />} name="Logout"/></div>
+            <div onClick={()=>{
+              logoutPage();
+              logout();
+            }}><Item icon={< OpenInNew />} name="Logout"/></div>
           </div>
           {/* group 3 */}
           <div className="group">

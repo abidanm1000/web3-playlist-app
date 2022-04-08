@@ -6,11 +6,13 @@ import { SongList } from '../components/SongList'
 import { Cart } from '../components/Cart'
 import { Carousel } from '../components/Carousel'
 // firebase imports
-import { onSnapshot, doc, deleteDoc, setDoc } from 'firebase/firestore'
+import { onSnapshot, doc } from 'firebase/firestore'
 import db from '../utils/firebase'
 import { auth } from '../utils/firebase'
 import { signOut } from 'firebase/auth'
 import { ProfileSongList } from '../components/ProfileSongList'
+import { Profile } from './Profile'
+import { useMoralis } from 'react-moralis'
 
 
 export const Dashboard = () => {
@@ -20,39 +22,23 @@ export const Dashboard = () => {
   const [filter, setFilter] = useState('mostloved.php?format=track')
   const [cart, setCart] = useState('')
   const [theme, setTheme] = useState('');
-  const [user, setUser] = useState({})
-
-  // activates light mode when switchTheme runs on click
-   let switchDarkTheme = () => !theme === '' ? setTheme('') : setTheme('lightMode');
-   let switchLightTheme = () => !theme === '' ? setTheme('lightMode') : setTheme('');
-
-
-
-  // Show and Hide Cart functionality 
-  const showCart = cart ? 'show' : '';
-  const activeCart = () => !cart ? setCart('show') : setCart('');
-  const hideCart = () => cart ? setCart('') : setCart('show');
-
-   //theaudiodb.com/api/v1/json/523532/mostloved.php?format=album
-
-   const [data , setData ] = useState([])
-   const [q , setQ] = useState("")
+  const [client, setClient] = useState({})
+  const {isAuthenticated} = useMoralis();
+  const [data , setData ] = useState([])
+  const [q , setQ] = useState("")
    
-     let handleChange = async (e) => { 
-       e.preventDefault()
-       
-       if(data){
-      await fetch(`https://www.theaudiodb.com/api/v1/json/523532/searchalbum.php?s=${q}`)
-          .then(response => response.json())
-          .then(json => setData(json.album))
-        }
-      setSongs([])
-     }
-
+  // search function API call
+  let handleChange = async (e) => { 
+    e.preventDefault()
     
-     
-   
-   
+    if(data){
+    await fetch(`https://www.theaudiodb.com/api/v1/json/523532/searchalbum.php?s=${q}`)
+      .then(response => response.json())
+      .then(json => setData(json.album))
+    }
+    
+    setSongs([])
+  }
    
 
 
@@ -63,7 +49,7 @@ export const Dashboard = () => {
         if(currentUser) {
           // keep track of that user
           // console.log(currentUser)
-          setUser(currentUser.uid)
+          setClient(currentUser.uid)
         } else {
           window.location = '/'
           // console.log('ERROR PLEASE SIGN IN FIRST')
@@ -71,12 +57,12 @@ export const Dashboard = () => {
     })
 
     // reading firestore data
-    const unsub = onSnapshot(doc(db, 'users', `${user}`), (snapshot) => {
+    const unsub = onSnapshot(doc(db, 'users', `${client}`), (snapshot) => {
       let userSongs = snapshot.data().songs
       setProfileSongs(userSongs)
     })
 
-
+    // song list function API call - works with filter control
     let getSong = async ()=>{
       await fetch(`https://theaudiodb.com/api/v1/json/523532/${filter}`)
       .then(response => response.json())
@@ -87,20 +73,26 @@ export const Dashboard = () => {
 
     // clean up function makes onSnapshot stop listening for changes
     return unsub
-  }, [user, filter])
-
-  
-
+  }, [client, filter])
   
 
 
 
+  // activates light mode when switchTheme runs on click
+  let switchDarkTheme = () => !theme === '' ? setTheme('') : setTheme('lightMode');
+  let switchLightTheme = () => !theme === '' ? setTheme('lightMode') : setTheme('');
 
+
+
+  // Show and Hide Cart functionality 
+  const showCart = cart ? 'show' : '';
+  const activeCart = () => !cart ? setCart('show') : setCart('');
+  const hideCart = () => cart ? setCart('') : setCart('show');
 
 
 
   // logout function passed to sidebar
-  const logout = async () => {
+  const logoutPage = async () => {
       await signOut(auth)
       window.location = '/'
   }
@@ -109,20 +101,34 @@ export const Dashboard = () => {
   const newAccount = async () => {
     await signOut(auth)
     window.location = '/signup'
-}
+  }
+
+ // metamask/moralis auth returning profile
+   if (isAuthenticated) {
+     return (
+       <Profile 
+       logoutPage={logoutPage} 
+       newAccount={newAccount} 
+       theme={theme} 
+       switchDarkTheme={switchDarkTheme} 
+       switchLightTheme={switchLightTheme}
+       profileSongs={profileSongs}
+       />
+     );
+   }
   
-console.log(data)
   return (
     <div className='Dashboard'>
       <div >
-        <Sidebar logout={logout}
-          newAccount={newAccount}
-          switchDarkTheme = {switchDarkTheme}
-          switchLightTheme = {switchLightTheme}
-          theme={theme}
+        <Sidebar 
+        logoutPage={logoutPage}
+        newAccount={newAccount}
+        switchDarkTheme = {switchDarkTheme}
+        switchLightTheme = {switchLightTheme}
+        theme={theme}
         />
-        
       </div>
+
       <div className={`Content ${theme}`}>
         <Navbar 
         activeCart={activeCart}
@@ -142,18 +148,17 @@ console.log(data)
         songs={songs}
         setFilter= {setFilter}
         data = {data}
-        
         profileSongs={profileSongs}
-        userId={user}
+        userId={client}
         />
       </div>
 
       <div className='Cart-Section'>
-        <Cart 
+        <Cart
         showCart={showCart}
-         hideCart={hideCart} 
-         userId={user} 
-         profileSongs={profileSongs}
+        hideCart={hideCart} 
+        userId={client} 
+        profileSongs={profileSongs}
         />
       </div>
     </div>
