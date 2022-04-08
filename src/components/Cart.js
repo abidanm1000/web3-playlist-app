@@ -11,10 +11,10 @@ export const Cart = ({ showCart, hideCart, userId, profileSongs }) => {
 
     const savedSongs = profileSongs;
 
-    if(user) {
-        user.set('saved-songs', [savedSongs])
-        user.save();
-    }
+    // if(user) {
+    //     user.set('saved-songs', [savedSongs])
+    //     user.save();
+    // }
 
     
   return (

@@ -114,9 +114,7 @@ export const Sidebar = ({ theme, logoutPage, newAccount, switchDarkTheme, switch
             <img
               src='/images/me1.jpg'
               alt="profile_img"
-              onClick={() => {
-                authenticate();
-                window.location = '/profile'}}
+              onClick={authenticate}
             />
           </motion.div>
           {/* groups */}
