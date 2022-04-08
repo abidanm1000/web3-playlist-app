@@ -470,18 +470,111 @@ h3 {
 
 .profile-songs {
   padding-top: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  width: 100%;
+  /* border: #c0300c 2px solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
 }
 
-/* .profile-stats {
-  transition: 0.5s ease;
-  text-align: center;
-  display: flex;
-  gap: 20px;
-} */
+.profile-songs-container {
+  /* border: #E5E5E5 2px solid; */
+  width: 80rem;
+  /* flex-basis: 500px; */
+  /* max-width: 500px; */
+}
 
-/* .stats:hover {
-  transform: translateY(-10px);
-} */
+/* Saved Songs CSS */
+.profile-songs-header {
+  width: 100%;
+  border-bottom: 1px rgb(150, 147, 147) solid;
+  padding: 5px 20px 5px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#saved-song-title {
+  /* border: 1px rgb(150, 147, 147) solid; */
+  flex-basis: 100px;
+  flex-grow: 3;
+  text-align: left;
+}
+
+#saved-genre-title {
+  flex-grow: 1;
+  /* border: 1px rgb(150, 147, 147) solid; */
+  flex-basis: 100px;
+  text-align: right;
+
+}
+
+.saved-song-list {
+  width: 100%;
+  /* border:  3px rgb(123, 255, 105) solid; */
+  overflow: scroll;
+}
+
+.saved-song-list::-webkit-scrollbar {
+  display: none;
+}
+
+.saved-song {
+  /* border: 3px hotpink solid; */
+  display: flex;
+  justify-content: center;
+  /* align-items: stretch; */
+  padding: 5px 15px 5px 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'BioRhyme', serif; */
+  font-size: 20px;
+  height: 75px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 250ms ease;
+  border-radius: 7px;
+
+  padding: 20px;
+  /* position: relative; */
+  /* flex-direction: column; */
+}
+
+.saved-song:hover {
+  transform: translateY(-4px);
+  /* box-shadow: 0 0 7px 0 hsl(240, 25%, 2%); */
+  background-color: rgba(133, 131, 131, 0.274);
+}
+
+.saved-song-info {
+  /* border:  3px rgb(123, 255, 105) solid; */
+  text-align: left;
+  flex-grow: 3;
+  flex-basis: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#artist {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(175, 171, 171);
+}
+
+#genre {
+  /* border:  3px rgb(123, 255, 105) solid; */
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  color: rgb(175, 171, 171);
+  flex-basis: 100px;
+  /* text-align: left; */
+}
 
 
 

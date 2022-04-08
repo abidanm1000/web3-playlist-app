@@ -7,14 +7,7 @@ import { useMoralis } from "react-moralis";
 
 export const Cart = ({ showCart, hideCart, userId, profileSongs }) => {
 
-    const { authenticate, user } = useMoralis();
-
-    const savedSongs = profileSongs;
-
-    // if(user) {
-    //     user.set('saved-songs', [savedSongs])
-    //     user.save();
-    // }
+    const { authenticate } = useMoralis();
 
     
   return (

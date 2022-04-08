@@ -157,7 +157,7 @@ export const Dashboard = () => {
         />
         
         <Carousel songs={songs} />
-        
+
         {/* video player container*/}
         <div className={`player ${video}`}>
           <p className='exit-player' onClick={closePlayer}>X</p>
